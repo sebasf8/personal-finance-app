@@ -13,27 +13,31 @@ class AddStatementItemViewController: UIViewController {
     @IBOutlet weak var nameTextField: UITextField!
     @IBOutlet weak var ammountTextField: UITextField!
     @IBOutlet weak var categoryPickerButton: UIButton!
+    @IBOutlet weak var assetToggleButton: UIToggleButton!
+    @IBOutlet weak var liabilityToggleButton: UIToggleButton!
     
     //MARK: - Properties
+    
+    //FIXME: Refactor this to allow user new categories
     let assetCategories = ["Savings", "Investment Portfolio", "Crypto"]
-    var container: NSPersistentContainer?
+    let liabilyCategories = ["Credit Card", "Mortgage", "Lean"]
+    var container: NSPersistentContainer!
     var selectedCategory: String?
     var statementItem: StatementItem?
+    var categories: [String] = []
     
     let popupWidth = UIScreen.main.bounds.width - 10
     let popupHeigth = UIScreen.main.bounds.height/4
     var categorySelectedRow = 0
+    var selectedType:StatementItemType?
 
     // MARK: - Lifecycle
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setupTextFields()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(true)
         
+        categoryPickerButton.isEnabled = false
     }
     
     //MARK: - Setups
@@ -49,6 +53,33 @@ class AddStatementItemViewController: UIViewController {
     }
     
     //MARK: - Actions
+    
+    @IBAction func selectAssetType(_ sender: Any) {
+        if selectedType != .asset {
+            selectedType = .asset
+            liabilityToggleButton.isSelected = false
+            categoryPickerButton.isEnabled = true
+            categories = assetCategories
+        } else {
+            selectedType = nil
+            categoryPickerButton.isEnabled = false
+            categories = []
+        }
+    }
+    
+    @IBAction func selectLiabilityType(_ sender: Any) {
+        if selectedType != .liability {
+            selectedType = .liability
+            assetToggleButton.isSelected = false
+            categoryPickerButton.isEnabled = true
+            categories = liabilyCategories
+        } else {
+            selectedType = nil
+            categoryPickerButton.isEnabled = false
+            categories = []
+        }
+    }
+    
     @IBAction func popupCategoryPicker(_ sender: Any) {
         let vc = UIViewController()
         vc.preferredContentSize = CGSize(width: popupWidth, height: popupHeigth)
@@ -78,19 +109,16 @@ class AddStatementItemViewController: UIViewController {
     }
     
     @IBAction func saveStatement(_ sender: Any){
-        statementItem = StatementItem(context: container!.viewContext)
+        statementItem = StatementItem(context: container.viewContext)
         let ammount = Double(ammountTextField.text ?? "0.00")!
         
         statementItem!.name = nameTextField.text
-        statementItem!.type = .asset
+        statementItem!.type = selectedType
         statementItem!.category = selectedCategory
         statementItem!.ammount = ammount
                 
         performSegue(withIdentifier: "toNetworthView", sender: self)
     }
-    
-    
-
 }
 
 // MARK: - Component delegates
@@ -101,11 +129,11 @@ extension AddStatementItemViewController: UIPickerViewDelegate, UIPickerViewData
     }
     
     func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
-        return assetCategories.count
+        return categories.count
     }
     
     func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
-        return assetCategories[row]
+        return categories[row]
     }
     
 }

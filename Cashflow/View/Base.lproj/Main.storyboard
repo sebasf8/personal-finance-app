@@ -5,7 +5,6 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
-        <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -35,7 +34,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="o1f-oW-R0M">
-                                <rect key="frame" x="0.0" y="88" width="414" height="808"/>
+                                <rect key="frame" x="0.0" y="88" width="414" height="774"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="arK-zW-zhR">
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="100"/>
@@ -55,7 +54,7 @@
                                         </constraints>
                                     </view>
                                     <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="3fv-QV-9my">
-                                        <rect key="frame" x="0.0" y="100" width="414" height="708"/>
+                                        <rect key="frame" x="0.0" y="100" width="414" height="674"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <prototypes>
                                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" accessoryType="disclosureIndicator" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="assetCell" id="UB8-MD-hn1">
@@ -74,10 +73,10 @@
                         <viewLayoutGuide key="safeArea" id="f2B-wk-Hil"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="o1f-oW-R0M" firstAttribute="bottom" secondItem="f2B-wk-Hil" secondAttribute="bottom" id="5vj-Dk-3cr"/>
                             <constraint firstItem="o1f-oW-R0M" firstAttribute="leading" secondItem="f2B-wk-Hil" secondAttribute="leading" id="6L6-o6-Mb2"/>
                             <constraint firstAttribute="trailing" secondItem="o1f-oW-R0M" secondAttribute="trailing" id="O6D-l4-PBE"/>
                             <constraint firstItem="o1f-oW-R0M" firstAttribute="top" secondItem="f2B-wk-Hil" secondAttribute="top" id="b5m-OX-5Vo"/>
-                            <constraint firstAttribute="bottom" secondItem="o1f-oW-R0M" secondAttribute="bottom" id="em3-Sq-bhY"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="Hix-k5-Coi"/>
@@ -110,47 +109,49 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
                             </textField>
-                            <stackView opaque="NO" contentMode="scaleToFill" spacingType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="pEz-vG-vUz">
-                                <rect key="frame" x="20" y="459" width="374" height="30"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="W3h-uX-6uB">
+                                <rect key="frame" x="20" y="399" width="374" height="30"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-x5-KWe">
-                                        <rect key="frame" x="0.0" y="0.0" width="262" height="30"/>
-                                        <state key="normal" title="Category">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JE8-3r-Krl" customClass="UIToggleButton" customModule="Cashflow" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="0.0" width="177" height="30"/>
+                                        <state key="normal" title="Asset"/>
                                         <connections>
-                                            <action selector="categoryButton:" destination="jeN-aS-syw" eventType="touchUpInside" id="tvC-Wc-Jgp"/>
-                                            <action selector="popupCategoryPicker:" destination="1Fb-Es-NCD" eventType="touchUpInside" id="Jlb-hH-WiB"/>
+                                            <action selector="selectAssetType:" destination="1Fb-Es-NCD" eventType="touchUpInside" id="eJ2-4Q-Uf9"/>
                                         </connections>
                                     </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="isU-e7-K9G">
-                                        <rect key="frame" x="270" y="0.0" width="104" height="30"/>
-                                        <state key="normal" image="chevron.compact.down" catalog="system">
-                                            <color key="titleColor" systemColor="labelColor"/>
-                                        </state>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iI9-zn-kIT" customClass="UIToggleButton" customModule="Cashflow" customModuleProvider="target">
+                                        <rect key="frame" x="197" y="0.0" width="177" height="30"/>
+                                        <state key="normal" title="Liability"/>
                                         <connections>
-                                            <action selector="popupCategoryPicker:" destination="1Fb-Es-NCD" eventType="touchUpInside" id="FtC-9m-rEI"/>
+                                            <action selector="selectLiabilityType:" destination="1Fb-Es-NCD" eventType="touchUpInside" id="q1D-92-LxT"/>
                                         </connections>
                                     </button>
                                 </subviews>
-                                <constraints>
-                                    <constraint firstItem="hvy-x5-KWe" firstAttribute="width" secondItem="pEz-vG-vUz" secondAttribute="width" multiplier="0.7" id="mm1-UN-Hqr"/>
-                                </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" enabled="NO" contentHorizontalAlignment="leading" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hvy-x5-KWe">
+                                <rect key="frame" x="20" y="449" width="374" height="18"/>
+                                <state key="normal" title="Category" image="chevron.down" catalog="system"/>
+                                <connections>
+                                    <action selector="categoryButton:" destination="jeN-aS-syw" eventType="touchUpInside" id="tvC-Wc-Jgp"/>
+                                    <action selector="popupCategoryPicker:" destination="1Fb-Es-NCD" eventType="touchUpInside" id="Jlb-hH-WiB"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="RB6-go-gvR"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="5wV-Pa-JQf" firstAttribute="leading" secondItem="RB6-go-gvR" secondAttribute="leading" constant="20" id="4gn-1M-Ff3"/>
-                            <constraint firstItem="pEz-vG-vUz" firstAttribute="leading" secondItem="RB6-go-gvR" secondAttribute="leading" constant="20" id="Clb-Ck-daD"/>
-                            <constraint firstItem="pEz-vG-vUz" firstAttribute="top" secondItem="8lH-kW-CnA" secondAttribute="bottom" constant="80" id="EDg-5B-yOv"/>
+                            <constraint firstItem="RB6-go-gvR" firstAttribute="trailing" secondItem="W3h-uX-6uB" secondAttribute="trailing" constant="20" id="8cI-zl-NNf"/>
+                            <constraint firstItem="RB6-go-gvR" firstAttribute="trailing" secondItem="hvy-x5-KWe" secondAttribute="trailing" constant="20" id="8r5-Gp-KFv"/>
+                            <constraint firstItem="hvy-x5-KWe" firstAttribute="leading" secondItem="RB6-go-gvR" secondAttribute="leading" constant="20" id="Ame-eq-aar"/>
                             <constraint firstItem="RB6-go-gvR" firstAttribute="trailing" secondItem="5wV-Pa-JQf" secondAttribute="trailing" constant="20" id="H5d-1P-bTH"/>
+                            <constraint firstItem="W3h-uX-6uB" firstAttribute="top" secondItem="8lH-kW-CnA" secondAttribute="bottom" constant="20" id="Jkh-L8-ldE"/>
                             <constraint firstItem="8lH-kW-CnA" firstAttribute="leading" secondItem="RB6-go-gvR" secondAttribute="leading" constant="20" id="RVH-o2-RPd"/>
                             <constraint firstItem="5wV-Pa-JQf" firstAttribute="top" secondItem="RB6-go-gvR" secondAttribute="top" constant="105" id="ScH-nt-dtJ"/>
-                            <constraint firstItem="RB6-go-gvR" firstAttribute="trailing" secondItem="pEz-vG-vUz" secondAttribute="trailing" constant="20" id="due-iZ-R2d"/>
+                            <constraint firstItem="W3h-uX-6uB" firstAttribute="leading" secondItem="RB6-go-gvR" secondAttribute="leading" constant="20" id="Xag-ef-Xi4"/>
+                            <constraint firstItem="hvy-x5-KWe" firstAttribute="top" secondItem="W3h-uX-6uB" secondAttribute="bottom" constant="20" id="Zrq-HM-4jQ"/>
                             <constraint firstItem="RB6-go-gvR" firstAttribute="trailing" secondItem="8lH-kW-CnA" secondAttribute="trailing" constant="20" id="fFd-zj-TQK"/>
                             <constraint firstItem="8lH-kW-CnA" firstAttribute="top" secondItem="5wV-Pa-JQf" secondAttribute="bottom" constant="118" id="pHz-8H-bSj"/>
-                            <constraint firstItem="pEz-vG-vUz" firstAttribute="centerX" secondItem="HG3-Ox-A2u" secondAttribute="centerX" id="tr2-nk-sj2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="9Ob-YZ-hXJ">
@@ -162,7 +163,9 @@
                     </navigationItem>
                     <connections>
                         <outlet property="ammountTextField" destination="8lH-kW-CnA" id="Ebk-n6-QCH"/>
+                        <outlet property="assetToggleButton" destination="JE8-3r-Krl" id="rbQ-e8-4FZ"/>
                         <outlet property="categoryPickerButton" destination="hvy-x5-KWe" id="IVn-lT-EJy"/>
+                        <outlet property="liabilityToggleButton" destination="iI9-zn-kIT" id="buR-jo-wle"/>
                         <outlet property="nameTextField" destination="5wV-Pa-JQf" id="E1f-fi-JMg"/>
                         <segue destination="jeN-aS-syw" kind="unwind" identifier="toNetworthView" unwindAction="unwind:" id="nQP-6x-5rp"/>
                     </connections>
@@ -254,13 +257,18 @@
             <point key="canvasLocation" x="198.55072463768118" y="-172.09821428571428"/>
         </scene>
     </scenes>
+    <designables>
+        <designable name="JE8-3r-Krl">
+            <size key="intrinsicContentSize" width="39" height="30"/>
+        </designable>
+        <designable name="iI9-zn-kIT">
+            <size key="intrinsicContentSize" width="53" height="30"/>
+        </designable>
+    </designables>
     <resources>
-        <image name="chevron.compact.down" catalog="system" width="128" height="43"/>
+        <image name="chevron.down" catalog="system" width="128" height="72"/>
         <image name="chevron.left" catalog="system" width="96" height="128"/>
         <image name="plus" catalog="system" width="128" height="113"/>
-        <systemColor name="labelColor">
-            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>

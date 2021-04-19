@@ -10,6 +10,7 @@
 		0A0A0859262A2717005F61B5 /* Networth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A0858262A2717005F61B5 /* Networth.swift */; };
 		0A0A086D262B4F4D005F61B5 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A086C262B4F4D005F61B5 /* TestCoreDataStack.swift */; };
 		0A0A0885262D0BB4005F61B5 /* StatementItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A0884262D0BB4005F61B5 /* StatementItemExtension.swift */; };
+		0A0A08AA262DFB51005F61B5 /* UIToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A08A9262DFB51005F61B5 /* UIToggleButton.swift */; };
 		0A4ED9AA2627B57E006B991A /* StatementItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9A92627B57E006B991A /* StatementItemType.swift */; };
 		0A4ED9BE262891A9006B991A /* KeyboardCustomBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */; };
 		0A4ED9C72628A39D006B991A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9C52628A39D006B991A /* HistoryTableViewCell.swift */; };
@@ -51,6 +52,7 @@
 		0A0A0858262A2717005F61B5 /* Networth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networth.swift; sourceTree = "<group>"; };
 		0A0A086C262B4F4D005F61B5 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
 		0A0A0884262D0BB4005F61B5 /* StatementItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemExtension.swift; sourceTree = "<group>"; };
+		0A0A08A9262DFB51005F61B5 /* UIToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToggleButton.swift; sourceTree = "<group>"; };
 		0A4ED9A92627B57E006B991A /* StatementItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemType.swift; sourceTree = "<group>"; };
 		0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomBehaviors.swift; sourceTree = "<group>"; };
 		0A4ED9C52628A39D006B991A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 				0A72F49A261E36AD000E93C0 /* StatementTableViewCell.xib */,
 				0A4ED9C52628A39D006B991A /* HistoryTableViewCell.swift */,
 				0A4ED9C62628A39D006B991A /* HistoryTableViewCell.xib */,
+				0A0A08A9262DFB51005F61B5 /* UIToggleButton.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -364,6 +367,7 @@
 				0ACE3F10261935EA00FBC73A /* AppDelegate.swift in Sources */,
 				0A4ED9BE262891A9006B991A /* KeyboardCustomBehaviors.swift in Sources */,
 				0ACE3F12261935EA00FBC73A /* SceneDelegate.swift in Sources */,
+				0A0A08AA262DFB51005F61B5 /* UIToggleButton.swift in Sources */,
 				0A4ED9AA2627B57E006B991A /* StatementItemType.swift in Sources */,
 				0A4ED9C72628A39D006B991A /* HistoryTableViewCell.swift in Sources */,
 				0A72F4A9261E63D4000E93C0 /* AddStatementItemViewController.swift in Sources */,

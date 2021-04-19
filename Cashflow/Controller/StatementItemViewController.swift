@@ -74,6 +74,7 @@ class StatementItemViewController: UIViewController {
         performSegue(withIdentifier: "unwindToNetworth", sender: self)
     }
     
+    
     // MARK: - Internal functions
     
     private func saveHistoryItem(ammount: Double) {

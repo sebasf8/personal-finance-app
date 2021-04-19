@@ -53,7 +53,7 @@ class NetWorthViewController: UIViewController {
         }
     }
     
-    //MARK: - IBActions
+    // MARK: - IBActions
     @objc func addElement(_ sender: Any) {
         if let addStatementView = storyboard?.instantiateViewController(identifier: "AddStatementView") as? AddStatementItemViewController {
             
@@ -72,9 +72,17 @@ class NetWorthViewController: UIViewController {
                 totalNetworth.text = currencyFormatter.string(from: NSNumber(value:networth!.getResult()))
             }
         } else if let sourceViewController = sender.source as? AddStatementItemViewController, let si = sourceViewController.statementItem {
-            let newIndexPath = IndexPath(row: networth.assets.count, section: 0)
-            
-            networth.addAsset(asset: si)
+            let newIndexPath: IndexPath!
+
+            if si.type == .asset {
+                newIndexPath = IndexPath(row: networth.assets.count, section: 0)
+                networth.addAsset(asset: si)
+            } else if si.type == .liability {
+                newIndexPath = IndexPath(row: networth.liabilities.count, section: 1)
+                networth.addLiability(liability: si)
+            } else {
+                fatalError("AssetType not implemented at table")
+            }
             
             assetsTable.insertRows(at: [newIndexPath], with: .automatic)
             totalNetworth.text = currencyFormatter.string(from: NSNumber(value:networth!.getResult()))
@@ -121,18 +129,41 @@ extension NetWorthViewController: UITableViewDataSource, UITableViewDelegate {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        if let assetDetailView = storyboard?.instantiateViewController(identifier: "AssetDetail") as? StatementItemViewController {
+        if let statementDetailView = storyboard?.instantiateViewController(identifier: "AssetDetail") as? StatementItemViewController {
             switch indexPath.section {
             case 0:
-                assetDetailView.statementItem = networth.assets[indexPath.row]
+                statementDetailView.statementItem = networth.assets[indexPath.row]
             case 1:
-                assetDetailView.statementItem = networth.liabilities[indexPath.row]
+                statementDetailView.statementItem = networth.liabilities[indexPath.row]
             default:
                 fatalError("Section is not implemented at networth table.")
             }
             
-            assetDetailView.container = self.container
-            navigationController?.pushViewController(assetDetailView, animated: true)
+            statementDetailView.container = self.container
+            navigationController?.pushViewController(statementDetailView, animated: true)
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+           return CGFloat.leastNormalMagnitude
+       }
+
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+       return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+        CGFloat(80)
+    }
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Assets"
+        case 1:
+            return "Liabilities"
+        default:
+            fatalError("Section not implemented")
         }
     }
 }
