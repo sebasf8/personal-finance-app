@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="17709" systemVersion="20D91" minimumToolsVersion="Automatic" sourceLanguage="Swift" usedWithCloudKit="YES" userDefinedModelVersionIdentifier="">
+    <entity name="StatementItem" representedClassName="StatementItem" syncable="YES" codeGenerationType="class">
+        <attribute name="ammount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="category" optional="YES" attributeType="String"/>
+        <attribute name="name" optional="YES" attributeType="String"/>
+        <attribute name="typeValue" optional="YES" attributeType="String"/>
+        <relationship name="history" optional="YES" toMany="YES" deletionRule="Nullify" destinationEntity="StatementItemMeasure" inverseName="statementItem" inverseEntity="StatementItemMeasure"/>
+        <uniquenessConstraints>
+            <uniquenessConstraint>
+                <constraint value="name"/>
+                <constraint value="category"/>
+                <constraint value="typeValue"/>
+            </uniquenessConstraint>
+        </uniquenessConstraints>
+    </entity>
+    <entity name="StatementItemMeasure" representedClassName="StatementItemMeasure" syncable="YES" codeGenerationType="class">
+        <attribute name="ammount" optional="YES" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="date" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <relationship name="statementItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="StatementItem" inverseName="history" inverseEntity="StatementItem"/>
+    </entity>
+    <elements>
+        <element name="StatementItem" positionX="-4348.360107421875" positionY="2644.202285766602" width="128" height="104"/>
+        <element name="StatementItemMeasure" positionX="-4138.086242675781" positionY="2730.79948425293" width="128" height="88"/>
+    </elements>
+</model>
