@@ -17,7 +17,7 @@ class NetworthCaseTest: XCTestCase {
     override func setUp() {
         super.setUp()
         coreDataStack = TestCoreDataStack()
-        sut = Networth(container: coreDataStack.container)
+        sut = Networth(repository: StatementItemCoreDataRepository(context: coreDataStack.container.viewContext))
     }
 
     override func tearDown() {
@@ -60,7 +60,7 @@ class NetworthCaseTest: XCTestCase {
         cash.category = "Bank"
         cash.type = .asset
         
-        sut.addAsset(asset: cash)
+        try! sut.addAsset(asset: cash)
         
         XCTAssertTrue(sut.assets.count == 1, "Asset was not added")
         XCTAssertEqual(sut.assets[0], cash, "Cash was not in asset list")
@@ -73,7 +73,7 @@ class NetworthCaseTest: XCTestCase {
         creditCard.category = "Credit Card"
         creditCard.type = .liability
         
-        sut.addLiability(liability: creditCard)
+        try! sut.addLiability(liability: creditCard)
     }
 
 }

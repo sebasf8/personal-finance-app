@@ -18,6 +18,8 @@
 		0A72F49B261E36AD000E93C0 /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72F499261E36AD000E93C0 /* StatementTableViewCell.swift */; };
 		0A72F49C261E36AD000E93C0 /* StatementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A72F49A261E36AD000E93C0 /* StatementTableViewCell.xib */; };
 		0A72F4A9261E63D4000E93C0 /* AddStatementItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72F4A8261E63D4000E93C0 /* AddStatementItemViewController.swift */; };
+		0ABA45612630FEDE00F0CADE /* StatementItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA45602630FEDE00F0CADE /* StatementItemRepository.swift */; };
+		0ABA45692630FF7300F0CADE /* StatementItemParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA45682630FF7300F0CADE /* StatementItemParameters.swift */; };
 		0ACE3F10261935EA00FBC73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F0F261935EA00FBC73A /* AppDelegate.swift */; };
 		0ACE3F12261935EA00FBC73A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F11261935EA00FBC73A /* SceneDelegate.swift */; };
 		0ACE3F14261935EA00FBC73A /* NetWorthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F13261935EA00FBC73A /* NetWorthViewController.swift */; };
@@ -60,6 +62,8 @@
 		0A72F499261E36AD000E93C0 /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
 		0A72F49A261E36AD000E93C0 /* StatementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementTableViewCell.xib; sourceTree = "<group>"; };
 		0A72F4A8261E63D4000E93C0 /* AddStatementItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementItemViewController.swift; sourceTree = "<group>"; };
+		0ABA45602630FEDE00F0CADE /* StatementItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemRepository.swift; sourceTree = "<group>"; };
+		0ABA45682630FF7300F0CADE /* StatementItemParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemParameters.swift; sourceTree = "<group>"; };
 		0ACE3F0C261935EA00FBC73A /* Cashflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACE3F0F261935EA00FBC73A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ACE3F11261935EA00FBC73A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -107,6 +111,7 @@
 		0A4ED9A02627A294006B991A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				0ABA455E2630FEC900F0CADE /* Repository */,
 				0A0A0884262D0BB4005F61B5 /* StatementItemExtension.swift */,
 				0A4ED9A92627B57E006B991A /* StatementItemType.swift */,
 				0A0A0858262A2717005F61B5 /* Networth.swift */,
@@ -145,6 +150,15 @@
 				0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0ABA455E2630FEC900F0CADE /* Repository */ = {
+			isa = PBXGroup;
+			children = (
+				0ABA45602630FEDE00F0CADE /* StatementItemRepository.swift */,
+				0ABA45682630FF7300F0CADE /* StatementItemParameters.swift */,
+			);
+			path = Repository;
 			sourceTree = "<group>";
 		};
 		0ACE3F03261935EA00FBC73A = {
@@ -358,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0ABA45692630FF7300F0CADE /* StatementItemParameters.swift in Sources */,
 				0A0A0859262A2717005F61B5 /* Networth.swift in Sources */,
 				0ACE3F1A261935EA00FBC73A /* Cashflow.xcdatamodeld in Sources */,
 				0A72F49B261E36AD000E93C0 /* StatementTableViewCell.swift in Sources */,
@@ -369,6 +384,7 @@
 				0ACE3F12261935EA00FBC73A /* SceneDelegate.swift in Sources */,
 				0A0A08AA262DFB51005F61B5 /* UIToggleButton.swift in Sources */,
 				0A4ED9AA2627B57E006B991A /* StatementItemType.swift in Sources */,
+				0ABA45612630FEDE00F0CADE /* StatementItemRepository.swift in Sources */,
 				0A4ED9C72628A39D006B991A /* HistoryTableViewCell.swift in Sources */,
 				0A72F4A9261E63D4000E93C0 /* AddStatementItemViewController.swift in Sources */,
 				0AE9F330262767B700101865 /* NumberFormatters.swift in Sources */,

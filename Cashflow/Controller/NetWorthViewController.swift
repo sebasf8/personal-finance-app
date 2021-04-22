@@ -45,7 +45,7 @@ class NetWorthViewController: UIViewController {
     }
     
     private func loadData() {
-        networth = Networth(container: self.container)
+        networth = Networth(repository: StatementItemCoreDataRepository(context: container.viewContext))
         totalNetworth.text = currencyFormatter.string(from: NSNumber(value:networth.getResult()))
         
         DispatchQueue.main.async {
@@ -75,11 +75,11 @@ class NetWorthViewController: UIViewController {
             let newIndexPath: IndexPath!
 
             if si.type == .asset {
-                newIndexPath = IndexPath(row: networth.assets.count, section: 0)
-                networth.addAsset(asset: si)
+                newIndexPath = IndexPath(row: networth.assets.count , section: 0)
+                try! networth.addAsset(asset: si)
             } else if si.type == .liability {
-                newIndexPath = IndexPath(row: networth.liabilities.count, section: 1)
-                networth.addLiability(liability: si)
+                newIndexPath = IndexPath(row: networth.liabilities.count , section: 1)
+                try! networth.addLiability(liability: si)
             } else {
                 fatalError("AssetType not implemented at table")
             }
@@ -96,9 +96,9 @@ extension NetWorthViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         switch section {
         case 0:
-            return networth.assets.count
+            return networth.assets.count 
         case 1:
-            return networth.liabilities.count
+            return networth.liabilities.count 
         default:
             fatalError("Section is not implemented at networth table.")
         }

@@ -9,54 +9,46 @@ import Foundation
 import CoreData
 
 class Networth {
-    let container: NSPersistentContainer
+    let repository: StatementItemRepository
     var assets: [StatementItem]
     var liabilities: [StatementItem]
     
-    init(container: NSPersistentContainer ) {
-        self.container = container
+    init(repository: StatementItemRepository) {
+        self.repository = repository
         
-        let assetFetchRequest = NSFetchRequest<StatementItem>(entityName: "StatementItem")
-        assetFetchRequest.predicate = NSPredicate(format: "typeValue == %@", StatementItemType.asset.rawValue)
+        let assetsRes = try? repository.findByParameters(params: StatementItemParameters(type: .asset))
+        let liabilitiesRes = try? repository.findByParameters(params: StatementItemParameters(type: .liability))
+        
+        assets = assetsRes ?? []
+        liabilities = liabilitiesRes ?? []
 
-        let liabilityFetchRequest = NSFetchRequest<StatementItem>(entityName: "StatementItem")
-        liabilityFetchRequest.predicate = NSPredicate(format: "typeValue == %@", StatementItemType.liability.rawValue)
-        
-        assets = try! container.viewContext.fetch(assetFetchRequest)
-        liabilities = try! container.viewContext.fetch(liabilityFetchRequest)
     }
     
     
-    func addAsset(asset: StatementItem) {
+    func addAsset(asset: StatementItem) throws {
         guard asset.type == .asset else {
             fatalError("StatementItem is not an asset at \(#function)")
         }
              
-        addHistoryEntry(asset)
+        asset.addHistoryEntry(ammount: asset.ammount, date: Date())
         assets.append(asset)
-        try! container.viewContext.save()
+        
+        try repository.save(asset)
     }
     
-    func addLiability(liability: StatementItem) {
+    func addLiability(liability: StatementItem) throws {
         guard liability.type == .liability else {
             fatalError("StatementItem is not a liability at \(#function)")
         }
         
-        addHistoryEntry(liability)
+        liability.addHistoryEntry(ammount: liability.ammount, date: Date())
         liabilities.append(liability)
-        try! container.viewContext.save()
+        
+        try repository.save(liability)
     }
     
     func getResult() -> Double {
         assets.reduce(0.0, {$0 + $1.ammount}) - liabilities.reduce(0.0, {$0 + $1.ammount})
-    }
-    
-    // FIXME: get it to StatementItem initializer 
-    private func addHistoryEntry(_ si: StatementItem) {
-        let statementItemMeasure = StatementItemMeasure(context:container.viewContext)
-        statementItemMeasure.ammount = si.ammount
-        statementItemMeasure.date = Date()
-        si.addToHistory(statementItemMeasure)
     }
     
 
