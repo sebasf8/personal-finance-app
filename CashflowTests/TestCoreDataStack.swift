@@ -13,13 +13,13 @@ class TestCoreDataStack {
         let modelURL = Bundle.main.url(forResource: "Cashflow", withExtension: "momd")!
         return NSManagedObjectModel(contentsOf: modelURL)!
     }()
-    
+
     public lazy var container: NSPersistentContainer = {
         let container = NSPersistentContainer(name: "Cashflow", managedObjectModel: TestCoreDataStack.model)
-        
+
         let persistentStoreDescription = NSPersistentStoreDescription()
         persistentStoreDescription.type = NSInMemoryStoreType
-        
+
         container.persistentStoreDescriptions = [persistentStoreDescription]
         container.loadPersistentStores { _, error in
             if let error = error as NSError? {
@@ -30,4 +30,3 @@ class TestCoreDataStack {
     }()
 
 }
-

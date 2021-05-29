@@ -8,15 +8,13 @@
 import Foundation
 
 struct NumberFormatters {
-    static let currencyFormatter: NumberFormatter = {
-        let locale = Locale.current
-        var formatter = NumberFormatter()
-        
+    static func currencyFormat(number: NSNumber, locale: Locale) -> String {
+        let formatter = NumberFormatter()
         formatter.currencySymbol = locale.currencySymbol
         formatter.decimalSeparator = locale.decimalSeparator
         formatter.maximumFractionDigits = 2
         formatter.numberStyle = .currency
-        
-        return formatter
-    }()
+
+        return formatter.string(from: number) ?? ""
+    }
 }

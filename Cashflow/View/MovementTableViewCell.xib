@@ -1,0 +1,90 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="18122" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="18093"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" rowHeight="79" id="KGk-i7-Jjw" customClass="MovementTableViewCell" customModule="Cashflow" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="325" height="79"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="325" height="79"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sRM-Hy-dEz" userLabel="Main View" customClass="CardView" customModule="Cashflow" customModuleProvider="target">
+                        <rect key="frame" x="10" y="6" width="305" height="74"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="s6s-Jz-yCr" customClass="CategoryIconView" customModule="Cashflow" customModuleProvider="target">
+                                <rect key="frame" x="5" y="12" width="50" height="50"/>
+                                <color key="backgroundColor" systemColor="systemGray2Color"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="50" id="Ur0-T1-yLM"/>
+                                    <constraint firstAttribute="height" constant="50" id="ZZZ-wA-ikA"/>
+                                </constraints>
+                            </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Salary" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Igp-6R-4iv">
+                                <rect key="frame" x="65" y="12" width="240" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="10/05/2021" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EM0-zS-BUz">
+                                <rect key="frame" x="65" y="46" width="240" height="16"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                <color key="textColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="$1,500.00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="10" translatesAutoresizingMaskIntoConstraints="NO" id="dEQ-yM-Hpv">
+                                <rect key="frame" x="219" y="27" width="76" height="20.5"/>
+                                <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
+                                <color key="textColor" red="0.2781258606" green="0.77070957419999997" blue="0.40320656020000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="EM0-zS-BUz" firstAttribute="bottom" secondItem="s6s-Jz-yCr" secondAttribute="bottom" id="2Lh-X5-JLd"/>
+                            <constraint firstItem="dEQ-yM-Hpv" firstAttribute="centerY" secondItem="sRM-Hy-dEz" secondAttribute="centerY" id="6Bh-ZI-nx5"/>
+                            <constraint firstAttribute="trailing" secondItem="dEQ-yM-Hpv" secondAttribute="trailing" constant="10" id="7Ka-2n-b2Q"/>
+                            <constraint firstItem="s6s-Jz-yCr" firstAttribute="leading" secondItem="sRM-Hy-dEz" secondAttribute="leading" constant="5" id="NOi-tO-9cY"/>
+                            <constraint firstItem="Igp-6R-4iv" firstAttribute="top" secondItem="s6s-Jz-yCr" secondAttribute="top" id="Slz-z5-aMc"/>
+                            <constraint firstAttribute="trailing" secondItem="Igp-6R-4iv" secondAttribute="trailing" id="Yal-wz-A9K"/>
+                            <constraint firstItem="EM0-zS-BUz" firstAttribute="leading" secondItem="Igp-6R-4iv" secondAttribute="leading" id="k2G-pO-oY5"/>
+                            <constraint firstItem="s6s-Jz-yCr" firstAttribute="centerY" secondItem="sRM-Hy-dEz" secondAttribute="centerY" id="oUO-SK-pSq"/>
+                            <constraint firstAttribute="trailing" secondItem="EM0-zS-BUz" secondAttribute="trailing" id="pNY-Dd-QER"/>
+                            <constraint firstItem="Igp-6R-4iv" firstAttribute="leading" secondItem="s6s-Jz-yCr" secondAttribute="trailing" constant="10" id="qex-Az-qFm"/>
+                            <constraint firstItem="s6s-Jz-yCr" firstAttribute="top" secondItem="sRM-Hy-dEz" secondAttribute="top" constant="12" id="tWL-KV-vgv"/>
+                            <constraint firstAttribute="bottom" secondItem="s6s-Jz-yCr" secondAttribute="bottom" constant="12" id="vL4-zy-gVs"/>
+                        </constraints>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sRM-Hy-dEz" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="10" id="IKm-kc-d7K"/>
+                    <constraint firstAttribute="bottom" secondItem="sRM-Hy-dEz" secondAttribute="bottom" constant="6" id="dmf-38-o1V"/>
+                    <constraint firstItem="sRM-Hy-dEz" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="6" id="gLb-l7-PZE"/>
+                    <constraint firstAttribute="trailing" secondItem="sRM-Hy-dEz" secondAttribute="trailing" constant="10" id="yH2-Us-oHe"/>
+                </constraints>
+            </tableViewCellContentView>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="amountLabel" destination="dEQ-yM-Hpv" id="Fii-2S-NgW"/>
+                <outlet property="categoryView" destination="s6s-Jz-yCr" id="vhp-RR-cdG"/>
+                <outlet property="dateLabel" destination="EM0-zS-BUz" id="Ua0-Yj-HA9"/>
+                <outlet property="nameLabel" destination="Igp-6R-4iv" id="W48-V5-3zd"/>
+            </connections>
+            <point key="canvasLocation" x="-31.159420289855074" y="37.165178571428569"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <systemColor name="systemGray2Color">
+            <color red="0.68235294117647061" green="0.68235294117647061" blue="0.69803921568627447" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </systemColor>
+    </resources>
+</document>

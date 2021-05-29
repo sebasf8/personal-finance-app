@@ -1,0 +1,854 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */;
+			buildPhases = (
+			);
+			dependencies = (
+			);
+			name = SwiftLint;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		1EAB069F79B2548917E7390ABF8F1A72 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		3B8D7967883177B5249B12A4903959DE /* Pods-Cashflow-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 4CBC8B31AEF21B908A335AA46C50E26C /* Pods-Cashflow-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		3D1511BC804BFED6990A712F2A378B93 /* Pods-CashflowTests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40BC2972B33C780756E6CEEF944E28A6 /* Pods-CashflowTests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		467C56638611BED090ECDD57A5E977D8 /* Pods-Cashflow-CashflowUITests-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 9C1E42891DA9C97C30E540CEE2A9A874 /* Pods-Cashflow-CashflowUITests-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		4A2A97AB2100BBDF4BD965C056B9336C /* Pods-CashflowTests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 440183BDE204E607D73E919727659556 /* Pods-CashflowTests-dummy.m */; };
+		4D4AAF692E65D50BF1DBE93BB99CF87C /* Pods-Cashflow-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 56646DE009B5EB237FCED5415445BFB1 /* Pods-Cashflow-dummy.m */; };
+		529754ACC66A1FAE5ACB5BFFF8C649CA /* Pods-Cashflow-CashflowUITests-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 31F610FC48A89ABE48DBF6D1B40E5A94 /* Pods-Cashflow-CashflowUITests-dummy.m */; };
+		9C630B3B61BFB7F996A9AE0B2BECD112 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+		F53DEADC7B54DB1AEB6E70D338ECB634 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8DA82736A2600787CFCC8F175D247D5C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 52B60EC2A583F24ACBB69C113F5488B9;
+			remoteInfo = SwiftLint;
+		};
+		E0A4004E0466D7163E9739B456E44DDF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 53C9A21CDF916D716709E9D1CFFBD0B0;
+			remoteInfo = "Pods-Cashflow";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		319C1B4883626CE2AFB3700FD93B366C /* Pods-CashflowTests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-CashflowTests.modulemap"; sourceTree = "<group>"; };
+		31F610FC48A89ABE48DBF6D1B40E5A94 /* Pods-Cashflow-CashflowUITests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cashflow-CashflowUITests-dummy.m"; sourceTree = "<group>"; };
+		3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.debug.xcconfig; sourceTree = "<group>"; };
+		40BC2972B33C780756E6CEEF944E28A6 /* Pods-CashflowTests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-CashflowTests-umbrella.h"; sourceTree = "<group>"; };
+		433B408A4C4411E9D84F85EECE4F398B /* Pods-Cashflow-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashflow-Info.plist"; sourceTree = "<group>"; };
+		440183BDE204E607D73E919727659556 /* Pods-CashflowTests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-CashflowTests-dummy.m"; sourceTree = "<group>"; };
+		4CBC8B31AEF21B908A335AA46C50E26C /* Pods-Cashflow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cashflow-umbrella.h"; sourceTree = "<group>"; };
+		56646DE009B5EB237FCED5415445BFB1 /* Pods-Cashflow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cashflow-dummy.m"; sourceTree = "<group>"; };
+		5CDD5033E15DE7F87197A45F5684DC26 /* Pods-CashflowTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CashflowTests-Info.plist"; sourceTree = "<group>"; };
+		62569428E5721278C6EEDECF03E109D5 /* Pods_Cashflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cashflow.framework; path = "Pods-Cashflow.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		6918C7C4F14A5D9824A2E8B86ECB334C /* Pods-Cashflow-CashflowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow-CashflowUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
+		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
+		859619041F08DC5048B4D813D1A6EC57 /* Pods-CashflowTests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-CashflowTests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		88DDCD82FE5A99E9BCCDF488C45260BE /* Pods-Cashflow-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashflow-acknowledgements.plist"; sourceTree = "<group>"; };
+		8DE07EDDF391A03D76999CF95C4E7D45 /* Pods-Cashflow-CashflowUITests-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cashflow-CashflowUITests-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8FCF57E4F19442F130C45F24E243AA83 /* Pods-Cashflow-CashflowUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashflow-CashflowUITests-Info.plist"; sourceTree = "<group>"; };
+		9C1E42891DA9C97C30E540CEE2A9A874 /* Pods-Cashflow-CashflowUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cashflow-CashflowUITests-umbrella.h"; sourceTree = "<group>"; };
+		9D6AFCFB16B1072558BB6009093DC296 /* Pods-Cashflow-CashflowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow-CashflowUITests.release.xcconfig"; sourceTree = "<group>"; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		A681A116C54AC23460CBD62DCF9CEFC5 /* Pods-CashflowTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CashflowTests-acknowledgements.plist"; sourceTree = "<group>"; };
+		B58BAB277D7C583E6A8DF9EAC982E805 /* Pods-CashflowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CashflowTests.release.xcconfig"; sourceTree = "<group>"; };
+		C3809B0A7CCBAF4F7B15293074C4220C /* Pods-CashflowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CashflowTests.debug.xcconfig"; sourceTree = "<group>"; };
+		D923BEFA5204F51524217ED66B10AD98 /* Pods-Cashflow.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow.release.xcconfig"; sourceTree = "<group>"; };
+		DBD273B284918429E825860AB24B3A8E /* Pods-Cashflow-CashflowUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cashflow-CashflowUITests.modulemap"; sourceTree = "<group>"; };
+		DE57C0A559DD79C60557EBC491E912A2 /* Pods-Cashflow-CashflowUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashflow-CashflowUITests-acknowledgements.plist"; sourceTree = "<group>"; };
+		ED037A83DF9D544D7EFD0E81FB07358F /* Pods-Cashflow-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cashflow-acknowledgements.markdown"; sourceTree = "<group>"; };
+		EE02BC50ADB523532BD8B022E43DAAA2 /* Pods_Cashflow_CashflowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cashflow_CashflowUITests.framework; path = "Pods-Cashflow-CashflowUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE8A1FF83E46D9A9101916BDD178860C /* Pods-Cashflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow.debug.xcconfig"; sourceTree = "<group>"; };
+		F6C9B1FC33CF92F4870DD982872785DA /* Pods-Cashflow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cashflow.modulemap"; sourceTree = "<group>"; };
+		F6FD2F40BFA938CF847CF00AE877E4D9 /* Pods_CashflowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CashflowTests.framework; path = "Pods-CashflowTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		88E0515FA559849469CFBCDF5FA6B70B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				F53DEADC7B54DB1AEB6E70D338ECB634 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		A2175245F6813B76AF07103B8713AF77 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				9C630B3B61BFB7F996A9AE0B2BECD112 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D673C13B971F8E923887650407D5D302 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				1EAB069F79B2548917E7390ABF8F1A72 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		09CAAED926104FAED9CC3B5726CE6078 /* Pods-Cashflow-CashflowUITests */ = {
+			isa = PBXGroup;
+			children = (
+				DBD273B284918429E825860AB24B3A8E /* Pods-Cashflow-CashflowUITests.modulemap */,
+				8DE07EDDF391A03D76999CF95C4E7D45 /* Pods-Cashflow-CashflowUITests-acknowledgements.markdown */,
+				DE57C0A559DD79C60557EBC491E912A2 /* Pods-Cashflow-CashflowUITests-acknowledgements.plist */,
+				31F610FC48A89ABE48DBF6D1B40E5A94 /* Pods-Cashflow-CashflowUITests-dummy.m */,
+				8FCF57E4F19442F130C45F24E243AA83 /* Pods-Cashflow-CashflowUITests-Info.plist */,
+				9C1E42891DA9C97C30E540CEE2A9A874 /* Pods-Cashflow-CashflowUITests-umbrella.h */,
+				6918C7C4F14A5D9824A2E8B86ECB334C /* Pods-Cashflow-CashflowUITests.debug.xcconfig */,
+				9D6AFCFB16B1072558BB6009093DC296 /* Pods-Cashflow-CashflowUITests.release.xcconfig */,
+			);
+			name = "Pods-Cashflow-CashflowUITests";
+			path = "Target Support Files/Pods-Cashflow-CashflowUITests";
+			sourceTree = "<group>";
+		};
+		51CFFD84204ECBA83B52E91D0AB190ED /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				62569428E5721278C6EEDECF03E109D5 /* Pods_Cashflow.framework */,
+				EE02BC50ADB523532BD8B022E43DAAA2 /* Pods_Cashflow_CashflowUITests.framework */,
+				F6FD2F40BFA938CF847CF00AE877E4D9 /* Pods_CashflowTests.framework */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
+			isa = PBXGroup;
+			children = (
+				73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */,
+			);
+			name = iOS;
+			sourceTree = "<group>";
+		};
+		589789422BAC87799F89CFCFF5C2640D /* Pods-Cashflow */ = {
+			isa = PBXGroup;
+			children = (
+				F6C9B1FC33CF92F4870DD982872785DA /* Pods-Cashflow.modulemap */,
+				ED037A83DF9D544D7EFD0E81FB07358F /* Pods-Cashflow-acknowledgements.markdown */,
+				88DDCD82FE5A99E9BCCDF488C45260BE /* Pods-Cashflow-acknowledgements.plist */,
+				56646DE009B5EB237FCED5415445BFB1 /* Pods-Cashflow-dummy.m */,
+				433B408A4C4411E9D84F85EECE4F398B /* Pods-Cashflow-Info.plist */,
+				4CBC8B31AEF21B908A335AA46C50E26C /* Pods-Cashflow-umbrella.h */,
+				EE8A1FF83E46D9A9101916BDD178860C /* Pods-Cashflow.debug.xcconfig */,
+				D923BEFA5204F51524217ED66B10AD98 /* Pods-Cashflow.release.xcconfig */,
+			);
+			name = "Pods-Cashflow";
+			path = "Target Support Files/Pods-Cashflow";
+			sourceTree = "<group>";
+		};
+		7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */,
+				7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/SwiftLint";
+			sourceTree = "<group>";
+		};
+		965877409E01FB3D85D85E90E6B30185 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				D96179D43A67C5D5323B0682D32C133C /* SwiftLint */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		ABA383BDE879F8D3514586893B3AA05C /* Pods-CashflowTests */ = {
+			isa = PBXGroup;
+			children = (
+				319C1B4883626CE2AFB3700FD93B366C /* Pods-CashflowTests.modulemap */,
+				859619041F08DC5048B4D813D1A6EC57 /* Pods-CashflowTests-acknowledgements.markdown */,
+				A681A116C54AC23460CBD62DCF9CEFC5 /* Pods-CashflowTests-acknowledgements.plist */,
+				440183BDE204E607D73E919727659556 /* Pods-CashflowTests-dummy.m */,
+				5CDD5033E15DE7F87197A45F5684DC26 /* Pods-CashflowTests-Info.plist */,
+				40BC2972B33C780756E6CEEF944E28A6 /* Pods-CashflowTests-umbrella.h */,
+				C3809B0A7CCBAF4F7B15293074C4220C /* Pods-CashflowTests.debug.xcconfig */,
+				B58BAB277D7C583E6A8DF9EAC982E805 /* Pods-CashflowTests.release.xcconfig */,
+			);
+			name = "Pods-CashflowTests";
+			path = "Target Support Files/Pods-CashflowTests";
+			sourceTree = "<group>";
+		};
+		BB90D5C8B500EBCCCE521D4E067C2EDB /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				589789422BAC87799F89CFCFF5C2640D /* Pods-Cashflow */,
+				09CAAED926104FAED9CC3B5726CE6078 /* Pods-Cashflow-CashflowUITests */,
+				ABA383BDE879F8D3514586893B3AA05C /* Pods-CashflowTests */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		CF1408CF629C7361332E53B88F7BD30C = {
+			isa = PBXGroup;
+			children = (
+				9D940727FF8FB9C785EB98E56350EF41 /* Podfile */,
+				D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */,
+				965877409E01FB3D85D85E90E6B30185 /* Pods */,
+				51CFFD84204ECBA83B52E91D0AB190ED /* Products */,
+				BB90D5C8B500EBCCCE521D4E067C2EDB /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				578452D2E740E91742655AC8F1636D1F /* iOS */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D96179D43A67C5D5323B0682D32C133C /* SwiftLint */ = {
+			isa = PBXGroup;
+			children = (
+				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
+			);
+			name = SwiftLint;
+			path = SwiftLint;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		278A09791F4F30E9BCEB27B639A2F19B /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				467C56638611BED090ECDD57A5E977D8 /* Pods-Cashflow-CashflowUITests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		99DD42A574528D006FE5890936E939CF /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3D1511BC804BFED6990A712F2A378B93 /* Pods-CashflowTests-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B5AFC23EC9EB285B5C9D66C2A91841C1 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3B8D7967883177B5249B12A4903959DE /* Pods-Cashflow-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		1B52FC42C1B53921D1E9CFE921ECDA01 /* Pods-Cashflow-CashflowUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D808C52A1555CC100AB6B9EB2517CF28 /* Build configuration list for PBXNativeTarget "Pods-Cashflow-CashflowUITests" */;
+			buildPhases = (
+				278A09791F4F30E9BCEB27B639A2F19B /* Headers */,
+				C680AD197BF00BD720D066AB3DD4086C /* Sources */,
+				A2175245F6813B76AF07103B8713AF77 /* Frameworks */,
+				656F1B3F26FC929CA8E74E40DCEB83C9 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Cashflow-CashflowUITests";
+			productName = "Pods-Cashflow-CashflowUITests";
+			productReference = EE02BC50ADB523532BD8B022E43DAAA2 /* Pods_Cashflow_CashflowUITests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		53C9A21CDF916D716709E9D1CFFBD0B0 /* Pods-Cashflow */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = A0EC4DA32075E86C8D69AADB95C6EAF9 /* Build configuration list for PBXNativeTarget "Pods-Cashflow" */;
+			buildPhases = (
+				B5AFC23EC9EB285B5C9D66C2A91841C1 /* Headers */,
+				3F81BBDA29A2CAFB713376FA1557E969 /* Sources */,
+				88E0515FA559849469CFBCDF5FA6B70B /* Frameworks */,
+				FE187AAB2663901787E020E32A90BC86 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Cashflow";
+			productName = "Pods-Cashflow";
+			productReference = 62569428E5721278C6EEDECF03E109D5 /* Pods_Cashflow.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		FBDBF8065DB0F6EDE67905D30C476049 /* Pods-CashflowTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = B3225FA2266330F341A9E8767198854F /* Build configuration list for PBXNativeTarget "Pods-CashflowTests" */;
+			buildPhases = (
+				99DD42A574528D006FE5890936E939CF /* Headers */,
+				C980BB3840F060EDE1EA65038EF138EB /* Sources */,
+				D673C13B971F8E923887650407D5D302 /* Frameworks */,
+				6E4786944CF516896205BAD369F0CBF5 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				1258A8502A2A19A43899F6C4643E347A /* PBXTargetDependency */,
+				14FF1E60B2853FF467ABA85BBD329917 /* PBXTargetDependency */,
+			);
+			name = "Pods-CashflowTests";
+			productName = "Pods-CashflowTests";
+			productReference = F6FD2F40BFA938CF847CF00AE877E4D9 /* Pods_CashflowTests.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		BFDFE7DC352907FC980B868725387E98 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1100;
+				LastUpgradeCheck = 1100;
+			};
+			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = CF1408CF629C7361332E53B88F7BD30C;
+			productRefGroup = 51CFFD84204ECBA83B52E91D0AB190ED /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				53C9A21CDF916D716709E9D1CFFBD0B0 /* Pods-Cashflow */,
+				1B52FC42C1B53921D1E9CFE921ECDA01 /* Pods-Cashflow-CashflowUITests */,
+				FBDBF8065DB0F6EDE67905D30C476049 /* Pods-CashflowTests */,
+				52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		656F1B3F26FC929CA8E74E40DCEB83C9 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		6E4786944CF516896205BAD369F0CBF5 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		FE187AAB2663901787E020E32A90BC86 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		3F81BBDA29A2CAFB713376FA1557E969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D4AAF692E65D50BF1DBE93BB99CF87C /* Pods-Cashflow-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C680AD197BF00BD720D066AB3DD4086C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				529754ACC66A1FAE5ACB5BFFF8C649CA /* Pods-Cashflow-CashflowUITests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		C980BB3840F060EDE1EA65038EF138EB /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4A2A97AB2100BBDF4BD965C056B9336C /* Pods-CashflowTests-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		1258A8502A2A19A43899F6C4643E347A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-Cashflow";
+			target = 53C9A21CDF916D716709E9D1CFFBD0B0 /* Pods-Cashflow */;
+			targetProxy = E0A4004E0466D7163E9739B456E44DDF /* PBXContainerItemProxy */;
+		};
+		14FF1E60B2853FF467ABA85BBD329917 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftLint;
+			target = 52B60EC2A583F24ACBB69C113F5488B9 /* SwiftLint */;
+			targetProxy = 8DA82736A2600787CFCC8F175D247D5C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		3D799F7A594D84290FB6078CCFCF7D6D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = EE8A1FF83E46D9A9101916BDD178860C /* Pods-Cashflow.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashflow/Pods-Cashflow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashflow/Pods-Cashflow.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8DE5143C03248BB6CD542DE3963D6F3A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		9B7B18F32B4B4F90E5593C61C6EA22D8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9D6AFCFB16B1072558BB6009093DC296 /* Pods-Cashflow-CashflowUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashflow-CashflowUITests/Pods-Cashflow-CashflowUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashflow-CashflowUITests/Pods-Cashflow-CashflowUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9E406C6AAF85E580207CD97B0044DEAB /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+		AD81E62ACCB0B7A923FC8AA288F9921E /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		BFBB93B5F3A2D921A550B4EC56027533 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = B58BAB277D7C583E6A8DF9EAC982E805 /* Pods-CashflowTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CashflowTests/Pods-CashflowTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CashflowTests/Pods-CashflowTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D8770630D3800E5E5D9835C2D8DB25CE /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D923BEFA5204F51524217ED66B10AD98 /* Pods-Cashflow.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashflow/Pods-Cashflow-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashflow/Pods-Cashflow.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		E9D97F370E97845AACEC7E3141936FBE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6918C7C4F14A5D9824A2E8B86ECB334C /* Pods-Cashflow-CashflowUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-Cashflow-CashflowUITests/Pods-Cashflow-CashflowUITests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Cashflow-CashflowUITests/Pods-Cashflow-CashflowUITests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3EC0124719FE8EF5FDDD72C26F8A2F57 /* SwiftLint.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FEAF13871B009CCE02B2DD657FD79DE9 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C3809B0A7CCBAF4F7B15293074C4220C /* Pods-CashflowTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = "Target Support Files/Pods-CashflowTests/Pods-CashflowTests-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-CashflowTests/Pods-CashflowTests.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8DE5143C03248BB6CD542DE3963D6F3A /* Debug */,
+				9E406C6AAF85E580207CD97B0044DEAB /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		A0EC4DA32075E86C8D69AADB95C6EAF9 /* Build configuration list for PBXNativeTarget "Pods-Cashflow" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3D799F7A594D84290FB6078CCFCF7D6D /* Debug */,
+				D8770630D3800E5E5D9835C2D8DB25CE /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AE7B4FB01588B9E6DF09CB79FC7CE7BD /* Build configuration list for PBXAggregateTarget "SwiftLint" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EADD1F50ABC8096A0D6CB18822BB4EE4 /* Debug */,
+				AD81E62ACCB0B7A923FC8AA288F9921E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		B3225FA2266330F341A9E8767198854F /* Build configuration list for PBXNativeTarget "Pods-CashflowTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				FEAF13871B009CCE02B2DD657FD79DE9 /* Debug */,
+				BFBB93B5F3A2D921A550B4EC56027533 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D808C52A1555CC100AB6B9EB2517CF28 /* Build configuration list for PBXNativeTarget "Pods-Cashflow-CashflowUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E9D97F370E97845AACEC7E3141936FBE /* Debug */,
+				9B7B18F32B4B4F90E5593C61C6EA22D8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = BFDFE7DC352907FC980B868725387E98 /* Project object */;
+}

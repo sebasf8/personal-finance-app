@@ -1,0 +1,6 @@
+framework module Pods_Cashflow_CashflowUITests {
+  umbrella header "Pods-Cashflow-CashflowUITests-umbrella.h"
+
+  export *
+  module * { export * }
+}

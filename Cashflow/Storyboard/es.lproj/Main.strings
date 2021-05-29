@@ -1,0 +1,63 @@
+
+/* Class = "UILabel"; text = "Income"; ObjectID = "5p9-XA-WFe"; */
+"5p9-XA-WFe.text" = "Income";
+
+/* Class = "UITextField"; placeholder = "Nombre"; ObjectID = "5wV-Pa-JQf"; */
+"5wV-Pa-JQf.placeholder" = "Nombre";
+
+/* Class = "UITabBarItem"; title = "Home"; ObjectID = "7XC-tt-VrU"; */
+"7XC-tt-VrU.title" = "Home";
+
+/* Class = "UILabel"; text = "Name"; ObjectID = "7cM-Gm-bFb"; */
+"7cM-Gm-bFb.text" = "Name";
+
+/* Class = "UITextField"; placeholder = "Monto"; ObjectID = "8lH-kW-CnA"; */
+"8lH-kW-CnA.placeholder" = "Monto";
+
+/* Class = "UILabel"; text = "Ammount"; ObjectID = "Fwg-wx-IbT"; */
+"Fwg-wx-IbT.text" = "Ammount";
+
+/* Class = "UILabel"; text = "Expense"; ObjectID = "Gk8-zy-yfE"; */
+"Gk8-zy-yfE.text" = "Expense";
+
+/* Class = "UILabel"; text = "Label"; ObjectID = "Gol-lj-dPT"; */
+"Gol-lj-dPT.text" = "Label";
+
+/* Class = "UIButton"; normalTitle = "Asset"; ObjectID = "JE8-3r-Krl"; */
+"JE8-3r-Krl.normalTitle" = "Asset";
+
+/* Class = "UILabel"; text = "Category"; ObjectID = "O08-Xi-hbg"; */
+"O08-Xi-hbg.text" = "Category";
+
+/* Class = "UILabel"; text = "Current Balance"; ObjectID = "O0J-ZC-eV3"; */
+"O0J-ZC-eV3.text" = "Current Balance";
+
+/* Class = "UITabBarItem"; title = "Item"; ObjectID = "Pb7-aP-VO6"; */
+"Pb7-aP-VO6.title" = "Item";
+
+/* Class = "UILabel"; text = "June 2018"; ObjectID = "TSp-aU-f89"; */
+"TSp-aU-f89.text" = "June 2018";
+
+/* Class = "UITabBarItem"; title = "Chart"; ObjectID = "Uwb-c8-7jE"; */
+"Uwb-c8-7jE.title" = "Chart";
+
+/* Class = "UILabel"; text = "$4.500,00"; ObjectID = "ZWJ-lR-AWl"; */
+"ZWJ-lR-AWl.text" = "$4.500,00";
+
+/* Class = "UILabel"; text = "$0.00"; ObjectID = "aUC-xI-PSO"; */
+"aUC-xI-PSO.text" = "$0.00";
+
+/* Class = "UIBarButtonItem"; title = "Back"; ObjectID = "btx-P9-nT3"; */
+"btx-P9-nT3.title" = "Back";
+
+/* Class = "UIButton"; normalTitle = "Category"; ObjectID = "hvy-x5-KWe"; */
+"hvy-x5-KWe.normalTitle" = "Category";
+
+/* Class = "UIButton"; normalTitle = "Liability"; ObjectID = "iI9-zn-kIT"; */
+"iI9-zn-kIT.normalTitle" = "Liability";
+
+/* Class = "UITabBarItem"; title = "Category"; ObjectID = "kbT-aL-pZh"; */
+"kbT-aL-pZh.title" = "Category";
+
+/* Class = "UILabel"; text = "$2.400,50"; ObjectID = "zF2-0V-KFr"; */
+"zF2-0V-KFr.text" = "$2.400,50";

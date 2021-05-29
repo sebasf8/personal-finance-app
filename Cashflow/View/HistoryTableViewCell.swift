@@ -11,7 +11,7 @@ class HistoryTableViewCell: UITableViewCell {
 
     @IBOutlet weak var ammountLabel: UILabel!
     @IBOutlet weak var dateLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
     }
@@ -21,5 +21,5 @@ class HistoryTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }

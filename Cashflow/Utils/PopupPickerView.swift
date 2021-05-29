@@ -8,9 +8,9 @@
 import UIKit
 
 func showPickerViewPopup(width popupWidth: Float, height popupHeight: Float) {
-    let vc = UIViewController()
-    vc.preferredContentSize = CGSize(width: popupWidth, height: popupHeight)
-    
+    let vieController = UIViewController()
+    vieController.preferredContentSize = CGSize(width: popupWidth, height: popupHeight)
+
     let pickerView = UIPickerView(frame: CGRect(x: 0, y: 0, width: width, height: height))
 
     pickerView.delegate = self
@@ -38,9 +38,9 @@ func showPickerViewPopup(width popupWidth: Float, height popupHeight: Float) {
     }))
 
     self.present(alert, animated: true, completion: nil)
-    }
+}
 
-    @objc func saveStatement(){
+@objc func saveStatement() {
     let statementItem = StatementItem(context: container!.viewContext)
 
     statementItem.name = nameTextInput.text
@@ -48,8 +48,12 @@ func showPickerViewPopup(width popupWidth: Float, height popupHeight: Float) {
     statementItem.date = Date()
     statementItem.type = StatementItemType.asset.rawValue
     statementItem.category = selectedCategory
+    do {
+        try container?.viewContext.save()
 
-    try! container?.viewContext.save()
+        } catch {
+            fatalError()
+        }
 
-    navigationController?.popViewController(animated: true)
-}
+        navigationController?.popViewController(animated: true)
+    }

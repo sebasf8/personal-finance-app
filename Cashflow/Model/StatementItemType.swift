@@ -8,6 +8,6 @@
 import Foundation
 
 enum StatementItemType: String {
-    
-    case asset = "Asset", liability = "Liability", expense = "Expense", income = "Inocome"
+
+    case asset = "Asset", liability = "Liability", expense = "Expense", income = "Income"
 }

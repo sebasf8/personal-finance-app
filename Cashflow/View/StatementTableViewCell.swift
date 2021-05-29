@@ -11,7 +11,7 @@ class StatementTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var ammountLabel: UILabel!
     @IBOutlet weak var categoryLabel: UILabel!
-    
+
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code
@@ -23,5 +23,5 @@ class StatementTableViewCell: UITableViewCell {
 
         // Configure the view for the selected state
     }
-    
+
 }
