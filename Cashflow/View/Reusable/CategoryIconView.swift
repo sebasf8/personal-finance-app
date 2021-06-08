@@ -6,23 +6,34 @@
 //
 
 import UIKit
+import Combine
 
 class CategoryIconView: UIView {
-    private var color = UIColor(named: "category_color_1")
-    private var image = UIImage(named: "credit_card")
+    private var imageView = UIImageView()
+    private var viewModel: CategoryViewModel?
+    private var subscriptions: Set<AnyCancellable> = []
 
-    func configure(image: UIImage?, color: UIColor?) {
-        self.color = color
-        self.image = image
+    func configure(viewModel: CategoryViewModel) {
+        self.viewModel = viewModel
+        setupBindings()
+    }
+
+    func setupBindings() {
+        viewModel?.$colorName.sink { [weak self] colorName in
+            let color = UIColor(named: colorName)
+
+            self?.imageView.tintColor = color
+            self?.layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
+        }.store(in: &subscriptions)
+
+        viewModel?.$assetName.sink { [weak self] assetName in
+            self?.imageView.image = UIImage(named: assetName)
+        }.store(in: &subscriptions)
     }
 
     override func layoutSubviews() {
-        let imageView = UIImageView(image: image)
-        imageView.tintColor = color
-
         layer.cornerRadius = frame.width / 2
         layer.masksToBounds = true
-        layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
 
         addSubview(imageView)
 
@@ -35,6 +46,5 @@ class CategoryIconView: UIView {
         ]
 
         NSLayoutConstraint.activate(constraints)
-
     }
 }

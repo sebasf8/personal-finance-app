@@ -14,9 +14,8 @@ class CashflowTestCase: XCTestCase {
     var sut: Cashflow!
 
     override func setUpWithError() throws {
-        sut = Cashflow()
+        sut = Cashflow(movements: [])
         coreDataStack = TestCoreDataStack()
-
     }
 
     override func tearDownWithError() throws {
@@ -24,69 +23,83 @@ class CashflowTestCase: XCTestCase {
         coreDataStack = nil
     }
 
-    func testAddExpense() throws {
-        let expense = CashflowItem(context: coreDataStack.container.viewContext)
-        expense.amount = 250
-        expense.category = "Groseries"
-        expense.type = .expense
+//    func testAddExpense() throws {
+//        let category1 = Category(name: "Fuel",
+//                                 assetName: "Fuel",
+//                                 colorName: "category_color_1")
+//
+//        let expense = CashflowItem(name: "Fuel",
+//                                    amount: 17.5,
+//                                    date: Date(),
+//                                    type: .expense,
+//                                    category: category1)
+//
+//
+//        sut.registerExpense(expense)
+//
+//        XCTAssertNotNil(sut.movements.first)
+//    }
 
-        sut.registerExpense(expense)
-
-        XCTAssertNotNil(sut.movements.first)
-    }
-
-    func testAddIncome() throws {
-        let income = CashflowItem(context: coreDataStack.container.viewContext)
-        income.amount = 250
-        income.category = "Salary"
-        income.type = .expense
-
-        sut.registerIncome(income)
-
-        XCTAssertNotNil(sut.movements.first)
-    }
+//    func testAddIncome() throws {
+//        let salary = Category()
+//        salary.assetName = "credit_card"
+//        salary.name = "Salary"
+//        salary.color = "category_color_1"
+//
+//        let income = CashflowItem()
+//        income.amount = 250
+//        income.category = salary
+//        income.type = .expense
+//
+//        sut.registerIncome(income)
+//
+//        XCTAssertNotNil(sut.movements.first)
+//    }
 
     func testGetCashflowForMonth() {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
 
-        let date1 = formatter.date(from: "2021/05/29 22:31")
-        let date2 = formatter.date(from: "2021/05/28 22:31")
-        let date3 = formatter.date(from: "2021/03/29 22:31")
-        let date4 = formatter.date(from: "2021/05/29 22:31")
+        let date1 = formatter.date(from: "2021/06/29 22:31")!
+        let date2 = formatter.date(from: "2021/06/28 22:31")!
+        let date4 = formatter.date(from: "2021/06/29 22:31")!
 
-        let income1 = CashflowItem(context: coreDataStack.container.viewContext)
-        income1.amount = 1200
-        income1.category = "Salary"
-        income1.type = .income
-        income1.date = date1
+        let category1 = Category(name: "Fuel",
+                                 assetName: "Fuel",
+                                 colorName: "category_color_1")
 
-        let expense1 = CashflowItem(context: coreDataStack.container.viewContext)
-        expense1.amount = 900
-        expense1.category = "Rent"
-        expense1.type = .expense
-        expense1.date = date2
+        let category2 = Category(name: "Credit Card",
+                                 assetName: "credit_card",
+                                 colorName: "category_color_2")
 
-        let expense2 = CashflowItem(context: coreDataStack.container.viewContext)
-        expense2.amount = 200
-        expense2.category = "Groseries"
-        expense2.type = .expense
-        expense2.date = date3
+        let category4 = Category(name: "Salary",
+                                 assetName: "credit_card",
+                                 colorName: "category_color_1")
 
-        let expense3 = CashflowItem(context: coreDataStack.container.viewContext)
-        expense3.amount = 17.5
-        expense3.category = "Delivery"
-        expense3.type = .expense
-        expense3.date = date4
+        let income1 = CashflowItem(uuid: nil,
+                                   name: "Salary",
+                                   amount: 1200,
+                                   date: date1,
+                                   type: .income,
+                                   category: category4)
 
-        sut.registerIncome(income1)
-        sut.registerExpense(expense1)
-        sut.registerExpense(expense2)
-        sut.registerExpense(expense3)
+        let expense1 = CashflowItem(uuid: nil,
+                                    name: "Rent",
+                                    amount: 900,
+                                    date: date2,
+                                    type: .expense,
+                                    category: category2)
 
-        let movements = sut.getCashflowFor(month: 5)
+        let expense3 = CashflowItem(name: "Fuel",
+                                    amount: 17.5,
+                                    date: date4,
+                                    type: .expense,
+                                    category: category1)
 
-        let total = movements.totalIncomes - movements.totalExpenses
+        let movements = [income1, expense1, expense3]
+        sut.movements = movements
+
+        let total = sut.totalIncomes - sut.totalExpenses
 
         XCTAssertEqual(total, 282.5)
     }

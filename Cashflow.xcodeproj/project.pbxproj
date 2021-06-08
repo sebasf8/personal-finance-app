@@ -7,46 +7,43 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0A0A0859262A2717005F61B5 /* Networth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A0858262A2717005F61B5 /* Networth.swift */; };
 		0A0A086D262B4F4D005F61B5 /* TestCoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A086C262B4F4D005F61B5 /* TestCoreDataStack.swift */; };
-		0A0A0885262D0BB4005F61B5 /* StatementItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A0884262D0BB4005F61B5 /* StatementItemExtension.swift */; };
-		0A0A08AA262DFB51005F61B5 /* UIToggleButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A08A9262DFB51005F61B5 /* UIToggleButton.swift */; };
-		0A0A444E26334964007384B2 /* StatementItemTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A0A444D26334964007384B2 /* StatementItemTestCase.swift */; };
 		0A1F6634266E6F0900AC2A67 /* CategoryIconView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A1F6633266E6F0900AC2A67 /* CategoryIconView.swift */; };
+		0A3A8D04266FA5C40062FDE6 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D03266FA5C40062FDE6 /* CategoryViewModel.swift */; };
+		0A3A8D06266FA7360062FDE6 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D05266FA7360062FDE6 /* CategoryRepository.swift */; };
+		0A3A8D09266FB56D0062FDE6 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D07266FB56D0062FDE6 /* CategoryTableViewCell.swift */; };
+		0A3A8D0A266FB56D0062FDE6 /* CategoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3A8D08266FB56D0062FDE6 /* CategoryTableViewCell.xib */; };
+		0A3A8D0C266FC0CD0062FDE6 /* CategoryListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D0B266FC0CD0062FDE6 /* CategoryListViewModel.swift */; };
 		0A3C266D26656DD8004FD6D0 /* MovementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C266B26656DD8004FD6D0 /* MovementTableViewCell.swift */; };
 		0A3C266E26656DD8004FD6D0 /* MovementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C266C26656DD8004FD6D0 /* MovementTableViewCell.xib */; };
 		0A3C26702665731B004FD6D0 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C266F2665731B004FD6D0 /* DateFormatters.swift */; };
-		0A4ED9AA2627B57E006B991A /* StatementItemType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9A92627B57E006B991A /* StatementItemType.swift */; };
 		0A4ED9BE262891A9006B991A /* KeyboardCustomBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */; };
-		0A4ED9C72628A39D006B991A /* HistoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9C52628A39D006B991A /* HistoryTableViewCell.swift */; };
-		0A4ED9C82628A39D006B991A /* HistoryTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A4ED9C62628A39D006B991A /* HistoryTableViewCell.xib */; };
+		0A60172A26737EE400B72B3D /* CashflowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172926737EE400B72B3D /* CashflowItem.swift */; };
+		0A60172C26737EF600B72B3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172B26737EF600B72B3D /* Category.swift */; };
+		0A60172E267380B700B72B3D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172D267380B700B72B3D /* CoreDataStack.swift */; };
+		0A6017302673811400B72B3D /* DBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172F2673811400B72B3D /* DBHelper.swift */; };
+		0A6017392673856200B72B3D /* CategoryMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6017352673856200B72B3D /* CategoryMO.swift */; };
+		0A60173B2673856200B72B3D /* CashflowItemMO.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6017372673856200B72B3D /* CashflowItemMO.swift */; };
+		0A60173D26738F3B00B72B3D /* CashflowItemCoreDataRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60173C26738F3B00B72B3D /* CashflowItemCoreDataRepository.swift */; };
 		0A65533C2662D224001469C8 /* DateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65533B2662D224001469C8 /* DateExtension.swift */; };
 		0A65533E2662D664001469C8 /* CashflowTestCase.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65533D2662D664001469C8 /* CashflowTestCase.swift */; };
 		0A6553402662D69B001469C8 /* Cashflow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A65533F2662D69B001469C8 /* Cashflow.swift */; };
-		0A6553422662E44F001469C8 /* CashflowItemExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A6553412662E44F001469C8 /* CashflowItemExtension.swift */; };
-		0A72F49B261E36AD000E93C0 /* StatementTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72F499261E36AD000E93C0 /* StatementTableViewCell.swift */; };
-		0A72F49C261E36AD000E93C0 /* StatementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A72F49A261E36AD000E93C0 /* StatementTableViewCell.xib */; };
-		0A72F4A9261E63D4000E93C0 /* AddStatementItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A72F4A8261E63D4000E93C0 /* AddStatementItemViewController.swift */; };
+		0A781430266F921600D6F20D /* CategoryListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A78142F266F921600D6F20D /* CategoryListViewController.swift */; };
 		0A98CA852669283200E8B5F4 /* CashflowViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98CA842669283200E8B5F4 /* CashflowViewModel.swift */; };
 		0A98CA872669568000E8B5F4 /* CashflowRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98CA862669567F00E8B5F4 /* CashflowRepository.swift */; };
 		0A98CA892669589F00E8B5F4 /* CalendarExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98CA882669589F00E8B5F4 /* CalendarExtension.swift */; };
 		0A98CA8B266978F300E8B5F4 /* CashflowItemViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A98CA8A266978F300E8B5F4 /* CashflowItemViewModel.swift */; };
 		0AACAB4A2663A15600E662A0 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACAB492663A15600E662A0 /* HomeViewController.swift */; };
 		0AACAB4E2664122F00E662A0 /* HeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AACAB4D2664122F00E662A0 /* HeaderView.swift */; };
-		0ABA45612630FEDE00F0CADE /* StatementItemRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA45602630FEDE00F0CADE /* StatementItemRepository.swift */; };
-		0ABA45692630FF7300F0CADE /* StatementItemParameters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABA45682630FF7300F0CADE /* StatementItemParameters.swift */; };
 		0ABD114C266A81170073E6A0 /* CardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD114B266A81170073E6A0 /* CardView.swift */; };
-		0ABD114E266CE11C0073E6A0 /* CategoryExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ABD114D266CE11C0073E6A0 /* CategoryExtension.swift */; };
 		0ACE3F10261935EA00FBC73A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F0F261935EA00FBC73A /* AppDelegate.swift */; };
 		0ACE3F12261935EA00FBC73A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F11261935EA00FBC73A /* SceneDelegate.swift */; };
-		0ACE3F14261935EA00FBC73A /* NetWorthViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F13261935EA00FBC73A /* NetWorthViewController.swift */; };
 		0ACE3F17261935EA00FBC73A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE3F15261935EA00FBC73A /* Main.storyboard */; };
 		0ACE3F1A261935EA00FBC73A /* Cashflow.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F18261935EA00FBC73A /* Cashflow.xcdatamodeld */; };
 		0ACE3F1C261935EE00FBC73A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE3F1B261935EE00FBC73A /* Assets.xcassets */; };
 		0ACE3F1F261935EE00FBC73A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0ACE3F1D261935EE00FBC73A /* LaunchScreen.storyboard */; };
-		0ACE3F2A261935EE00FBC73A /* NetworthCaseTest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F29261935EE00FBC73A /* NetworthCaseTest.swift */; };
 		0ACE3F35261935EF00FBC73A /* CashflowUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F34261935EF00FBC73A /* CashflowUITests.swift */; };
-		0ACE3F49261A8BBA00FBC73A /* StatementItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0ACE3F48261A8BBA00FBC73A /* StatementItemViewController.swift */; };
+		0AE544C126713C3200582A02 /* CategoryDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE544C026713C3200582A02 /* CategoryDetailViewController.swift */; };
 		0AE9F330262767B700101865 /* NumberFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0AE9F32F262767B700101865 /* NumberFormatters.swift */; };
 		93C766C530D198DEA88A2FE8 /* Pods_Cashflow.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2EADA5E8049E3E4F52BE393D /* Pods_Cashflow.framework */; };
 		A9BA50E59F378E40A91B20AB /* Pods_Cashflow_CashflowUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B2EB6522960FB43B7F475212 /* Pods_Cashflow_CashflowUITests.framework */; };
@@ -71,26 +68,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0A0A0858262A2717005F61B5 /* Networth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Networth.swift; sourceTree = "<group>"; };
 		0A0A086C262B4F4D005F61B5 /* TestCoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestCoreDataStack.swift; sourceTree = "<group>"; };
-		0A0A0884262D0BB4005F61B5 /* StatementItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemExtension.swift; sourceTree = "<group>"; };
-		0A0A08A9262DFB51005F61B5 /* UIToggleButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIToggleButton.swift; sourceTree = "<group>"; };
-		0A0A444D26334964007384B2 /* StatementItemTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemTestCase.swift; sourceTree = "<group>"; };
 		0A1F6633266E6F0900AC2A67 /* CategoryIconView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconView.swift; sourceTree = "<group>"; };
+		0A3A8D03266FA5C40062FDE6 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
+		0A3A8D05266FA7360062FDE6 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
+		0A3A8D07266FB56D0062FDE6 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
+		0A3A8D08266FB56D0062FDE6 /* CategoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CategoryTableViewCell.xib; sourceTree = "<group>"; };
+		0A3A8D0B266FC0CD0062FDE6 /* CategoryListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewModel.swift; sourceTree = "<group>"; };
 		0A3C266B26656DD8004FD6D0 /* MovementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovementTableViewCell.swift; sourceTree = "<group>"; };
 		0A3C266C26656DD8004FD6D0 /* MovementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovementTableViewCell.xib; sourceTree = "<group>"; };
 		0A3C266F2665731B004FD6D0 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
-		0A4ED9A92627B57E006B991A /* StatementItemType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemType.swift; sourceTree = "<group>"; };
 		0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomBehaviors.swift; sourceTree = "<group>"; };
-		0A4ED9C52628A39D006B991A /* HistoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HistoryTableViewCell.swift; sourceTree = "<group>"; };
-		0A4ED9C62628A39D006B991A /* HistoryTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HistoryTableViewCell.xib; sourceTree = "<group>"; };
+		0A60172926737EE400B72B3D /* CashflowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowItem.swift; sourceTree = "<group>"; };
+		0A60172B26737EF600B72B3D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
+		0A60172D267380B700B72B3D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
+		0A60172F2673811400B72B3D /* DBHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DBHelper.swift; sourceTree = "<group>"; };
+		0A6017352673856200B72B3D /* CategoryMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryMO.swift; sourceTree = "<group>"; };
+		0A6017372673856200B72B3D /* CashflowItemMO.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowItemMO.swift; sourceTree = "<group>"; };
+		0A60173C26738F3B00B72B3D /* CashflowItemCoreDataRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowItemCoreDataRepository.swift; sourceTree = "<group>"; };
 		0A65533B2662D224001469C8 /* DateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateExtension.swift; sourceTree = "<group>"; };
 		0A65533D2662D664001469C8 /* CashflowTestCase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowTestCase.swift; sourceTree = "<group>"; };
 		0A65533F2662D69B001469C8 /* Cashflow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Cashflow.swift; sourceTree = "<group>"; };
-		0A6553412662E44F001469C8 /* CashflowItemExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowItemExtension.swift; sourceTree = "<group>"; };
-		0A72F499261E36AD000E93C0 /* StatementTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementTableViewCell.swift; sourceTree = "<group>"; };
-		0A72F49A261E36AD000E93C0 /* StatementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = StatementTableViewCell.xib; sourceTree = "<group>"; };
-		0A72F4A8261E63D4000E93C0 /* AddStatementItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddStatementItemViewController.swift; sourceTree = "<group>"; };
+		0A78142F266F921600D6F20D /* CategoryListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryListViewController.swift; sourceTree = "<group>"; };
 		0A98CA842669283200E8B5F4 /* CashflowViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowViewModel.swift; sourceTree = "<group>"; };
 		0A98CA862669567F00E8B5F4 /* CashflowRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowRepository.swift; sourceTree = "<group>"; };
 		0A98CA882669589F00E8B5F4 /* CalendarExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarExtension.swift; sourceTree = "<group>"; };
@@ -99,26 +98,21 @@
 		0AACAB4D2664122F00E662A0 /* HeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HeaderView.swift; sourceTree = "<group>"; };
 		0AACAB5126641AE000E662A0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
 		0AACAB5226641AE000E662A0 /* es */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = es; path = es.lproj/Main.strings; sourceTree = "<group>"; };
-		0ABA45602630FEDE00F0CADE /* StatementItemRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemRepository.swift; sourceTree = "<group>"; };
-		0ABA45682630FF7300F0CADE /* StatementItemParameters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemParameters.swift; sourceTree = "<group>"; };
 		0ABD114B266A81170073E6A0 /* CardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardView.swift; sourceTree = "<group>"; };
-		0ABD114D266CE11C0073E6A0 /* CategoryExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryExtension.swift; sourceTree = "<group>"; };
 		0ACE3F0C261935EA00FBC73A /* Cashflow.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cashflow.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACE3F0F261935EA00FBC73A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0ACE3F11261935EA00FBC73A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0ACE3F13261935EA00FBC73A /* NetWorthViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetWorthViewController.swift; sourceTree = "<group>"; };
 		0ACE3F16261935EA00FBC73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		0ACE3F19261935EA00FBC73A /* Cashflow.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Cashflow.xcdatamodel; sourceTree = "<group>"; };
 		0ACE3F1B261935EE00FBC73A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0ACE3F1E261935EE00FBC73A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0ACE3F20261935EE00FBC73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ACE3F25261935EE00FBC73A /* CashflowTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashflowTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		0ACE3F29261935EE00FBC73A /* NetworthCaseTest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworthCaseTest.swift; sourceTree = "<group>"; };
 		0ACE3F2B261935EE00FBC73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0ACE3F30261935EF00FBC73A /* CashflowUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CashflowUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0ACE3F34261935EF00FBC73A /* CashflowUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowUITests.swift; sourceTree = "<group>"; };
 		0ACE3F36261935EF00FBC73A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		0ACE3F48261A8BBA00FBC73A /* StatementItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StatementItemViewController.swift; sourceTree = "<group>"; };
+		0AE544C026713C3200582A02 /* CategoryDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDetailViewController.swift; sourceTree = "<group>"; };
 		0AE9F32F262767B700101865 /* NumberFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NumberFormatters.swift; sourceTree = "<group>"; };
 		1108EBC5DD2AAF21B6FABC97 /* Pods-Cashflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Cashflow.debug.xcconfig"; path = "Target Support Files/Pods-Cashflow/Pods-Cashflow.debug.xcconfig"; sourceTree = "<group>"; };
 		23C7C850A1A5A79B9B86E588 /* Pods_CashflowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashflowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -162,12 +156,10 @@
 		0A4ED9A02627A294006B991A /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				0A0A0884262D0BB4005F61B5 /* StatementItemExtension.swift */,
-				0A4ED9A92627B57E006B991A /* StatementItemType.swift */,
-				0A0A0858262A2717005F61B5 /* Networth.swift */,
+				0A6017312673847C00B72B3D /* CoreData */,
 				0A65533F2662D69B001469C8 /* Cashflow.swift */,
-				0A6553412662E44F001469C8 /* CashflowItemExtension.swift */,
-				0ABD114D266CE11C0073E6A0 /* CategoryExtension.swift */,
+				0A60172B26737EF600B72B3D /* Category.swift */,
+				0A60172926737EE400B72B3D /* CashflowItem.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -176,13 +168,10 @@
 			isa = PBXGroup;
 			children = (
 				0ABD114A266A81000073E6A0 /* Reusable */,
-				0A72F499261E36AD000E93C0 /* StatementTableViewCell.swift */,
-				0A72F49A261E36AD000E93C0 /* StatementTableViewCell.xib */,
-				0A4ED9C52628A39D006B991A /* HistoryTableViewCell.swift */,
-				0A4ED9C62628A39D006B991A /* HistoryTableViewCell.xib */,
-				0A0A08A9262DFB51005F61B5 /* UIToggleButton.swift */,
 				0A3C266B26656DD8004FD6D0 /* MovementTableViewCell.swift */,
 				0A3C266C26656DD8004FD6D0 /* MovementTableViewCell.xib */,
+				0A3A8D07266FB56D0062FDE6 /* CategoryTableViewCell.swift */,
+				0A3A8D08266FB56D0062FDE6 /* CategoryTableViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -191,10 +180,9 @@
 			isa = PBXGroup;
 			children = (
 				0A4ED9BC2628915F006B991A /* Extensions */,
-				0ACE3F13261935EA00FBC73A /* NetWorthViewController.swift */,
-				0ACE3F48261A8BBA00FBC73A /* StatementItemViewController.swift */,
-				0A72F4A8261E63D4000E93C0 /* AddStatementItemViewController.swift */,
 				0AACAB492663A15600E662A0 /* HomeViewController.swift */,
+				0A78142F266F921600D6F20D /* CategoryListViewController.swift */,
+				0AE544C026713C3200582A02 /* CategoryDetailViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -205,6 +193,15 @@
 				0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */,
 			);
 			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0A6017312673847C00B72B3D /* CoreData */ = {
+			isa = PBXGroup;
+			children = (
+				0A6017352673856200B72B3D /* CategoryMO.swift */,
+				0A6017372673856200B72B3D /* CashflowItemMO.swift */,
+			);
+			path = CoreData;
 			sourceTree = "<group>";
 		};
 		0A78140E266F75D200D6F20D /* Storyboard */ = {
@@ -221,6 +218,8 @@
 			children = (
 				0A98CA842669283200E8B5F4 /* CashflowViewModel.swift */,
 				0A98CA8A266978F300E8B5F4 /* CashflowItemViewModel.swift */,
+				0A3A8D03266FA5C40062FDE6 /* CategoryViewModel.swift */,
+				0A3A8D0B266FC0CD0062FDE6 /* CategoryListViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -228,9 +227,11 @@
 		0ABA455E2630FEC900F0CADE /* Repository */ = {
 			isa = PBXGroup;
 			children = (
-				0ABA45602630FEDE00F0CADE /* StatementItemRepository.swift */,
-				0ABA45682630FF7300F0CADE /* StatementItemParameters.swift */,
 				0A98CA862669567F00E8B5F4 /* CashflowRepository.swift */,
+				0A3A8D05266FA7360062FDE6 /* CategoryRepository.swift */,
+				0A60173C26738F3B00B72B3D /* CashflowItemCoreDataRepository.swift */,
+				0A60172D267380B700B72B3D /* CoreDataStack.swift */,
+				0A60172F2673811400B72B3D /* DBHelper.swift */,
 			);
 			path = Repository;
 			sourceTree = "<group>";
@@ -289,8 +290,6 @@
 		0ACE3F28261935EE00FBC73A /* CashflowTests */ = {
 			isa = PBXGroup;
 			children = (
-				0A0A444D26334964007384B2 /* StatementItemTestCase.swift */,
-				0ACE3F29261935EE00FBC73A /* NetworthCaseTest.swift */,
 				0ACE3F2B261935EE00FBC73A /* Info.plist */,
 				0A0A086C262B4F4D005F61B5 /* TestCoreDataStack.swift */,
 				0A65533D2662D664001469C8 /* CashflowTestCase.swift */,
@@ -450,11 +449,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A3C266E26656DD8004FD6D0 /* MovementTableViewCell.xib in Resources */,
+				0A3A8D0A266FB56D0062FDE6 /* CategoryTableViewCell.xib in Resources */,
 				0ACE3F1F261935EE00FBC73A /* LaunchScreen.storyboard in Resources */,
-				0A4ED9C82628A39D006B991A /* HistoryTableViewCell.xib in Resources */,
 				0ACE3F1C261935EE00FBC73A /* Assets.xcassets in Resources */,
 				0ACE3F17261935EA00FBC73A /* Main.storyboard in Resources */,
-				0A72F49C261E36AD000E93C0 /* StatementTableViewCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -565,36 +563,36 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0ABA45692630FF7300F0CADE /* StatementItemParameters.swift in Sources */,
-				0A6553422662E44F001469C8 /* CashflowItemExtension.swift in Sources */,
 				0A3C26702665731B004FD6D0 /* DateFormatters.swift in Sources */,
 				0A65533C2662D224001469C8 /* DateExtension.swift in Sources */,
-				0A0A0859262A2717005F61B5 /* Networth.swift in Sources */,
 				0ACE3F1A261935EA00FBC73A /* Cashflow.xcdatamodeld in Sources */,
 				0AACAB4A2663A15600E662A0 /* HomeViewController.swift in Sources */,
 				0AACAB4E2664122F00E662A0 /* HeaderView.swift in Sources */,
 				0ABD114C266A81170073E6A0 /* CardView.swift in Sources */,
-				0A72F49B261E36AD000E93C0 /* StatementTableViewCell.swift in Sources */,
-				0A0A0885262D0BB4005F61B5 /* StatementItemExtension.swift in Sources */,
-				0ABD114E266CE11C0073E6A0 /* CategoryExtension.swift in Sources */,
+				0A60173D26738F3B00B72B3D /* CashflowItemCoreDataRepository.swift in Sources */,
 				0A1F6634266E6F0900AC2A67 /* CategoryIconView.swift in Sources */,
-				0ACE3F49261A8BBA00FBC73A /* StatementItemViewController.swift in Sources */,
-				0ACE3F14261935EA00FBC73A /* NetWorthViewController.swift in Sources */,
 				0ACE3F10261935EA00FBC73A /* AppDelegate.swift in Sources */,
+				0A6017302673811400B72B3D /* DBHelper.swift in Sources */,
+				0A60172C26737EF600B72B3D /* Category.swift in Sources */,
 				0A4ED9BE262891A9006B991A /* KeyboardCustomBehaviors.swift in Sources */,
 				0ACE3F12261935EA00FBC73A /* SceneDelegate.swift in Sources */,
 				0A3C266D26656DD8004FD6D0 /* MovementTableViewCell.swift in Sources */,
-				0A0A08AA262DFB51005F61B5 /* UIToggleButton.swift in Sources */,
-				0A4ED9AA2627B57E006B991A /* StatementItemType.swift in Sources */,
-				0ABA45612630FEDE00F0CADE /* StatementItemRepository.swift in Sources */,
-				0A4ED9C72628A39D006B991A /* HistoryTableViewCell.swift in Sources */,
+				0A6017392673856200B72B3D /* CategoryMO.swift in Sources */,
+				0A781430266F921600D6F20D /* CategoryListViewController.swift in Sources */,
+				0A3A8D0C266FC0CD0062FDE6 /* CategoryListViewModel.swift in Sources */,
+				0A3A8D06266FA7360062FDE6 /* CategoryRepository.swift in Sources */,
+				0A60172E267380B700B72B3D /* CoreDataStack.swift in Sources */,
 				0A98CA852669283200E8B5F4 /* CashflowViewModel.swift in Sources */,
 				0A98CA8B266978F300E8B5F4 /* CashflowItemViewModel.swift in Sources */,
+				0AE544C126713C3200582A02 /* CategoryDetailViewController.swift in Sources */,
 				0A98CA892669589F00E8B5F4 /* CalendarExtension.swift in Sources */,
-				0A72F4A9261E63D4000E93C0 /* AddStatementItemViewController.swift in Sources */,
+				0A3A8D04266FA5C40062FDE6 /* CategoryViewModel.swift in Sources */,
 				0A6553402662D69B001469C8 /* Cashflow.swift in Sources */,
+				0A60172A26737EE400B72B3D /* CashflowItem.swift in Sources */,
 				0A98CA872669568000E8B5F4 /* CashflowRepository.swift in Sources */,
 				0AE9F330262767B700101865 /* NumberFormatters.swift in Sources */,
+				0A3A8D09266FB56D0062FDE6 /* CategoryTableViewCell.swift in Sources */,
+				0A60173B2673856200B72B3D /* CashflowItemMO.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -603,9 +601,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0A65533E2662D664001469C8 /* CashflowTestCase.swift in Sources */,
-				0ACE3F2A261935EE00FBC73A /* NetworthCaseTest.swift in Sources */,
 				0A0A086D262B4F4D005F61B5 /* TestCoreDataStack.swift in Sources */,
-				0A0A444E26334964007384B2 /* StatementItemTestCase.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

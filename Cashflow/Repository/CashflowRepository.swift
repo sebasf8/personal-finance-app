@@ -6,58 +6,33 @@
 //
 
 import Foundation
-
 import CoreData
 
 protocol CashflowRepository {
-    func fetch() throws -> Cashflow
-    func fetchFor(year: Int) throws -> Cashflow
-    func fetchFor(month: Int) throws -> Cashflow
-    func save(_ statementItem: CashflowItem) throws
+    func fetch() -> Cashflow
+    func fetchFor(year: Int) -> Cashflow
+    func fetchFor(month: Int) -> Cashflow
 }
 
 struct CashflowCoreDataRepository: CashflowRepository {
-    let context: NSManagedObjectContext
-    let kEntityName = "CashflowItem"
+    var cashflowItemRepository: CashflowItemRepository
 
-    init(context: NSManagedObjectContext) {
-        self.context = context
+    init(cashflowItemRepository: CashflowItemRepository) {
+        self.cashflowItemRepository = cashflowItemRepository
     }
 
-    func fetch() throws -> Cashflow {
-        let fetchRequest = NSFetchRequest<CashflowItem>(entityName: kEntityName)
-        let movements: [CashflowItem] = try context.fetch(fetchRequest)
+    func fetch() -> Cashflow {
+        return Cashflow(movements: cashflowItemRepository.fetch())
+    }
 
+    func fetchFor(year: Int) -> Cashflow {
+        let movements: [CashflowItem] = cashflowItemRepository.fetchFor(year: year)
         return Cashflow(movements: movements)
     }
 
-    func fetchFor(year: Int) throws -> Cashflow {
-        let fetchRequest = NSFetchRequest<CashflowItem>(entityName: kEntityName)
-
-        let startOfYear = Calendar.current.startOfYear(Date()) as NSDate
-        let endOfYear = Calendar.current.endOfYear(Date()) as NSDate
-
-        fetchRequest.predicate = NSPredicate(format: "date >= %@ and date <= %@", startOfYear, endOfYear)
-
-        let movements: [CashflowItem] = try context.fetch(fetchRequest)
+    func fetchFor(month: Int) -> Cashflow {
+        let movements: [CashflowItem] = cashflowItemRepository.fetchFor(month: month)
 
         return Cashflow(movements: movements)
-    }
-
-    func fetchFor(month: Int) throws -> Cashflow {
-        let fetchRequest = NSFetchRequest<CashflowItem>(entityName: kEntityName)
-
-        let startOfMonth = Calendar.current.startOfMonth(Date()) as NSDate
-        let endOfMonth = Calendar.current.endOfMonth(Date()) as NSDate
-
-        fetchRequest.predicate = NSPredicate(format: "date >= %@ and date <= %@", startOfMonth, endOfMonth)
-
-        let movements: [CashflowItem] = try context.fetch(fetchRequest)
-
-        return Cashflow(movements: movements)
-    }
-
-    func save(_ movement: CashflowItem) throws {
-        try context.save()
     }
 }

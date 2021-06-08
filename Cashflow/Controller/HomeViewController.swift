@@ -16,12 +16,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak private var movementsTable: UITableView!
 
     private let movementCellId = "movementCell"
+    private let context = CoreDataStack.shared.persistentContainer.viewContext
 
-    // swiftlint:disable force_cast
-    private let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
-    // swiftlint:enable force_cast
-
-    private var cashflowViewModel: CashflowViewModel!
+    private var cashflowViewModel: CashflowViewModel?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -37,10 +34,10 @@ class HomeViewController: UIViewController {
 
     // MARK: - Setup
     private func configureHeader() {
-        currentBalanceLabel.text = cashflowViewModel.currentBalance
-        periodButton.setTitle(cashflowViewModel.period, for: .normal)
-        incomeInPeriodLabel.text = cashflowViewModel.incomes
-        expenseInPeriodLabel.text = cashflowViewModel.expenses
+        currentBalanceLabel.text = cashflowViewModel?.currentBalance
+        periodButton.setTitle(cashflowViewModel?.period, for: .normal)
+        incomeInPeriodLabel.text = cashflowViewModel?.incomes
+        expenseInPeriodLabel.text = cashflowViewModel?.expenses
     }
 
     private func configureMovementsTable() {
@@ -57,69 +54,77 @@ class HomeViewController: UIViewController {
     }
 
     private func loadData() {
+//        let formatter = DateFormatter()
+//        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+//
+//        let date1 = formatter.date(from: "2021/06/29 22:31")!
+//        let date2 = formatter.date(from: "2021/06/28 22:31")!
+//        let date3 = formatter.date(from: "2021/03/29 22:31")!
+//        let date4 = formatter.date(from: "2021/06/29 22:31")!
+//
+//        let category1 = Category(name: "Fuel",
+//                                 assetName: "Fuel",
+//                                 colorName: "category_color_1")
+//
+//        let category2 = Category(name: "Credit Card",
+//                                 assetName: "credit_card",
+//                                 colorName: "category_color_2")
+//
+//        let category3 = Category(name: "Dinner",
+//                                 assetName: "dinner",
+//                                 colorName: "category_color_3")
+//
+//        let category4 = Category(name: "Salary",
+//                                 assetName: "credit_card",
+//                                 colorName: "category_color_1")
+//
+//        let income1 = CashflowItem(uuid: nil,
+//                                   name: "Salary",
+//                                   amount: 1200,
+//                                   date: date1,
+//                                   type: .income,
+//                                   category: category4)
+//
+//        let expense1 = CashflowItem(uuid: nil,
+//                                    name: "Rent",
+//                                    amount: 900,
+//                                    date: date2,
+//                                    type: .expense,
+//                                    category: category2)
+//
+//        let expense2 = CashflowItem(uuid: nil,
+//                                    name: "Food",
+//                                    amount: 200,
+//                                    date: date3,
+//                                    type: .expense,
+//                                    category: category3)
+//
+//        let expense3 = CashflowItem(name: "Fuel",
+//                                    amount: 17.5,
+//                                    date: date4,
+//                                    type: .expense,
+//                                    category: category1)
 
-        let formatter = DateFormatter()
-        formatter.dateFormat = "yyyy/MM/dd HH:mm"
+        let itemRepository = CashflowItemCoreDataRepository.shared
+        let repository = CashflowCoreDataRepository(cashflowItemRepository: itemRepository)
 
-        let date1 = formatter.date(from: "2021/06/29 22:31")
-        let date2 = formatter.date(from: "2021/06/28 22:31")
-        let date3 = formatter.date(from: "2021/03/29 22:31")
-        let date4 = formatter.date(from: "2021/06/29 22:31")
+//        categoryRepository.save(category1)
+//        categoryRepository.save(category2)
+//        categoryRepository.save(category3)
+//        categoryRepository.save(category4)
+//
+//        itemRepository.save(income1)
+//        itemRepository.save(expense1)
+//        itemRepository.save(expense2)
+//        itemRepository.save(expense3)
 
-        let category1 = Category(context: context)
-        category1.assetName = "fuel"
-        category1.name = "Fuel"
-        category1.color = "category_color_1"
+        cashflowViewModel = CashflowViewModel(repository: repository)
 
-        let category2 = Category(context: context)
-        category2.assetName = "credit_card"
-        category2.name = "Credit Card"
-        category2.color = "category_color_2"
-
-        let category3 = Category(context: context)
-        category3.assetName = "dinner"
-        category3.name = "Dinner"
-        category3.color = "category_color_3"
-
-        let category4 = Category(context: context)
-        category4.assetName = "credit_card"
-        category4.name = "Salary"
-        category4.color = "category_color_1"
-
-        let income1 = CashflowItem(context: context)
-        income1.amount = 1200
-        income1.name = "Salary"
-        income1.category = category4
-        income1.type = .income
-        income1.date = date1
-
-        let expense1 = CashflowItem(context: context)
-        expense1.amount = 900
-        expense1.name = "Rent"
-        expense1.category = category2
-        expense1.type = .expense
-        expense1.date = date2
-
-        let expense2 = CashflowItem(context: context)
-        expense2.amount = 200
-        expense2.name = "Food"
-        expense2.category = category3
-        expense2.type = .expense
-        expense2.date = date3
-
-        let expense3 = CashflowItem(context: context)
-        expense3.amount = 17.5
-        expense3.name = "Sushi"
-        expense3.category = category3
-        expense3.type = .expense
-        expense3.date = date4
-
-        do {
-            let cashflow = try CashflowCoreDataRepository(context: context).fetchFor(month: Date().month)
-            cashflowViewModel = CashflowViewModel(cashflow)
-        } catch {
-            fatalError()
-        }
+//        let movementsViewModel: [CashflowItemViewModel] = cashflow.movements.map { cashflowItem in
+//            let categoryViewModel = CategoryViewModel(repository: categoryRepository)
+//
+//            return CashflowItemViewModel(cashflowItem, category: categoryViewModel, repository: repository)
+//        }
 
     }
 
@@ -132,15 +137,15 @@ class HomeViewController: UIViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cashflowViewModel.movements.count
+        cashflowViewModel?.movements.count ?? 0
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: movementCellId, for: indexPath)
 
-        if let cell = cell as? MovementTableViewCell {
-            let movement = cashflowViewModel.movements[indexPath.row]
-            cell.configure(movement: CashflowItemViewModel(movement))
+        if let cell = cell as? MovementTableViewCell, let viewModel = cashflowViewModel {
+            let movement = viewModel.movements[indexPath.row]
+            cell.configure(movement: movement)
         }
 
         return cell

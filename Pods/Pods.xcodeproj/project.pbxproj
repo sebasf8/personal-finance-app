@@ -15,6 +15,7 @@
 			dependencies = (
 			);
 			name = SwiftLint;
+			productName = SwiftLint;
 		};
 /* End PBXAggregateTarget section */
 
@@ -57,7 +58,7 @@
 		4CBC8B31AEF21B908A335AA46C50E26C /* Pods-Cashflow-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cashflow-umbrella.h"; sourceTree = "<group>"; };
 		56646DE009B5EB237FCED5415445BFB1 /* Pods-Cashflow-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Cashflow-dummy.m"; sourceTree = "<group>"; };
 		5CDD5033E15DE7F87197A45F5684DC26 /* Pods-CashflowTests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CashflowTests-Info.plist"; sourceTree = "<group>"; };
-		62569428E5721278C6EEDECF03E109D5 /* Pods_Cashflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cashflow.framework; path = "Pods-Cashflow.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		62569428E5721278C6EEDECF03E109D5 /* Pods_Cashflow.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashflow.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6918C7C4F14A5D9824A2E8B86ECB334C /* Pods-Cashflow-CashflowUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow-CashflowUITests.debug.xcconfig"; sourceTree = "<group>"; };
 		73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS14.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		7EAB1DA481EDDC005A251D3A5E6BE4CD /* SwiftLint.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftLint.release.xcconfig; sourceTree = "<group>"; };
@@ -67,7 +68,7 @@
 		8FCF57E4F19442F130C45F24E243AA83 /* Pods-Cashflow-CashflowUITests-Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashflow-CashflowUITests-Info.plist"; sourceTree = "<group>"; };
 		9C1E42891DA9C97C30E540CEE2A9A874 /* Pods-Cashflow-CashflowUITests-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Cashflow-CashflowUITests-umbrella.h"; sourceTree = "<group>"; };
 		9D6AFCFB16B1072558BB6009093DC296 /* Pods-Cashflow-CashflowUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow-CashflowUITests.release.xcconfig"; sourceTree = "<group>"; };
-		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		9D940727FF8FB9C785EB98E56350EF41 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; indentWidth = 2; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; tabWidth = 2; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		A681A116C54AC23460CBD62DCF9CEFC5 /* Pods-CashflowTests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-CashflowTests-acknowledgements.plist"; sourceTree = "<group>"; };
 		B58BAB277D7C583E6A8DF9EAC982E805 /* Pods-CashflowTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CashflowTests.release.xcconfig"; sourceTree = "<group>"; };
 		C3809B0A7CCBAF4F7B15293074C4220C /* Pods-CashflowTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-CashflowTests.debug.xcconfig"; sourceTree = "<group>"; };
@@ -75,10 +76,10 @@
 		DBD273B284918429E825860AB24B3A8E /* Pods-Cashflow-CashflowUITests.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cashflow-CashflowUITests.modulemap"; sourceTree = "<group>"; };
 		DE57C0A559DD79C60557EBC491E912A2 /* Pods-Cashflow-CashflowUITests-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Cashflow-CashflowUITests-acknowledgements.plist"; sourceTree = "<group>"; };
 		ED037A83DF9D544D7EFD0E81FB07358F /* Pods-Cashflow-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Cashflow-acknowledgements.markdown"; sourceTree = "<group>"; };
-		EE02BC50ADB523532BD8B022E43DAAA2 /* Pods_Cashflow_CashflowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_Cashflow_CashflowUITests.framework; path = "Pods-Cashflow-CashflowUITests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		EE02BC50ADB523532BD8B022E43DAAA2 /* Pods_Cashflow_CashflowUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Cashflow_CashflowUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		EE8A1FF83E46D9A9101916BDD178860C /* Pods-Cashflow.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Cashflow.debug.xcconfig"; sourceTree = "<group>"; };
 		F6C9B1FC33CF92F4870DD982872785DA /* Pods-Cashflow.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-Cashflow.modulemap"; sourceTree = "<group>"; };
-		F6FD2F40BFA938CF847CF00AE877E4D9 /* Pods_CashflowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; name = Pods_CashflowTests.framework; path = "Pods-CashflowTests.framework"; sourceTree = BUILT_PRODUCTS_DIR; };
+		F6FD2F40BFA938CF847CF00AE877E4D9 /* Pods_CashflowTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CashflowTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -227,7 +228,6 @@
 			children = (
 				7FDA596DBE0337ACDFE55A210D54EF26 /* Support Files */,
 			);
-			name = SwiftLint;
 			path = SwiftLint;
 			sourceTree = "<group>";
 		};
@@ -324,7 +324,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1100;
-				LastUpgradeCheck = 1100;
+				LastUpgradeCheck = 1250;
 			};
 			buildConfigurationList = 4821239608C13582E20E6DA73FD5F1F9 /* Build configuration list for PBXProject "Pods" */;
 			compatibilityVersion = "Xcode 9.3";
@@ -623,7 +623,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -753,7 +753,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

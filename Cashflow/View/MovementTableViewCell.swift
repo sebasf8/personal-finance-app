@@ -9,9 +9,9 @@ import UIKit
 
 class MovementTableViewCell: UITableViewCell {
     @IBOutlet weak private var nameLabel: UILabel!
-    @IBOutlet weak private  var dateLabel: UILabel!
-    @IBOutlet weak private  var amountLabel: UILabel!
-    @IBOutlet weak var categoryView: CategoryIconView!
+    @IBOutlet weak private var dateLabel: UILabel!
+    @IBOutlet weak private var amountLabel: UILabel!
+    @IBOutlet weak private var categoryView: CategoryIconView!
 
     override func awakeFromNib() {
         super.awakeFromNib()
@@ -22,11 +22,11 @@ class MovementTableViewCell: UITableViewCell {
     }
 
     func configure(movement: CashflowItemViewModel) {
-        amountLabel.textColor = movement.amountLabelColor
+        amountLabel.textColor = UIColor(named: movement.amountLabelColor)
         nameLabel.text = movement.name
         dateLabel.text = movement.date
         amountLabel.text = movement.amount
-        categoryView.configure(image: movement.categoryImage, color: movement.categoryColor)
+        categoryView.configure(viewModel: movement.category)
     }
 
 }

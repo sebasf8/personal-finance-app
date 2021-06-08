@@ -5,12 +5,12 @@
 //  Created by Sebastian Fernandez on 03/06/2021.
 //
 
-import UIKit
+import Foundation
 
 class CashflowItemViewModel {
     private let cashflowItem: CashflowItem
 
-    var name: String? {
+    var name: String {
         cashflowItem.name
     }
 
@@ -18,7 +18,7 @@ class CashflowItemViewModel {
         makeFormattedAmount()
     }
 
-    var amountLabelColor: UIColor? {
+    var amountLabelColor: String {
         getLabelColor()
     }
 
@@ -26,24 +26,11 @@ class CashflowItemViewModel {
         formatDate()
     }
 
-    var categoryImage: UIImage? {
-        guard let assetName = cashflowItem.category?.assetName else {
-            return nil
-        }
-
-        return UIImage(named: assetName)
-    }
-
-    var categoryColor: UIColor? {
-        guard let colorName = cashflowItem.category?.color else {
-            return UIColor(named: "category_color_1")
-        }
-
-        return UIColor(named: colorName)
-    }
+    var category: CategoryViewModel
 
     init(_ cashflowItem: CashflowItem) {
         self.cashflowItem = cashflowItem
+        category = CategoryViewModel(cashflowItem.category, repository: CategoryCoreDataRepository.shared)
     }
 
     private func makeFormattedAmount() -> String {
@@ -56,20 +43,15 @@ class CashflowItemViewModel {
         return "\(sign)\(amount)"
     }
 
-    private func getLabelColor() -> UIColor? {
+    private func getLabelColor() -> String {
         if cashflowItem.type == .expense {
-            return UIColor(named: "expense_color")
+            return "expense_color"
         } else {
-            return UIColor(named: "income_color")
+            return "income_color"
         }
     }
 
     private func formatDate() -> String {
-        var dateText = ""
-
-        if let date = cashflowItem.date {
-            dateText = DateFormatters.dayMonthAndYear(date: date, locale: Locale.current)
-        }
-        return dateText
+        return DateFormatters.dayMonthAndYear(date: cashflowItem.date, locale: Locale.current)
     }
 }

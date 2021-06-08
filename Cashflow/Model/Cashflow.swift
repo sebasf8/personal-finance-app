@@ -17,19 +17,15 @@ class Cashflow {
         sumarizeMovementsOf(type: .expense)
     }
 
+    var currentBalance: Double {
+        totalIncomes - totalExpenses
+    }
+
     init(movements: [CashflowItem]) {
         self.movements = movements
     }
 
-    func registerExpense(_ expense: CashflowItem) {
-        movements.append(expense)
-    }
-
-    func registerIncome(_ income: CashflowItem) {
-        movements.append(income)
-    }
-
-    private func sumarizeMovementsOf(type: StatementItemType) -> Double {
+    private func sumarizeMovementsOf(type: InvoiceType) -> Double {
         movements.filter { movement in
             movement.type == type
         }.reduce(0.0) { partialResult, movement in

@@ -9,32 +9,30 @@ import Foundation
 
 class CashflowViewModel {
     private let cashflow: Cashflow
+    private let repository: CashflowRepository
 
-    var currentBalance: String {
-        formatNumberWithCurrentCurrencyLocale(cashflow.totalIncomes - cashflow.totalExpenses)
-    }
+    @Published var currentBalance: String
+    @Published var period: String
+    @Published var incomes: String
+    @Published var expenses: String
+    @Published var movements: [CashflowItemViewModel]
 
-    var period: String {
-        DateFormatters.monthNameAndYear(date: Date(), locale: Locale.current)
-    }
+    init(repository: CashflowRepository) {
+        let date = Date()
+        self.repository = repository
+        self.cashflow = repository.fetchFor(month: date.month)
 
-    var incomes: String {
-        formatNumberWithCurrentCurrencyLocale(cashflow.totalIncomes)
-    }
+        let balance = cashflow.currentBalance as NSNumber
+        let incomes = cashflow.totalIncomes as NSNumber
+        let expenses = cashflow.totalExpenses as NSNumber
+        let locale = Locale.current
 
-    var expenses: String {
-        formatNumberWithCurrentCurrencyLocale(cashflow.totalExpenses)
-    }
-
-    var movements: [CashflowItem] {
-        cashflow.movements
-    }
-
-    init(_ cashflow: Cashflow) {
-        self.cashflow = cashflow
-    }
-
-    private func formatNumberWithCurrentCurrencyLocale(_ number: Double) -> String {
-        NumberFormatters.currencyFormat(number: NSNumber(value: number), locale: Locale.current)
+        currentBalance = NumberFormatters.currencyFormat(number: balance, locale: locale)
+        period = DateFormatters.monthNameAndYear(date: date, locale: locale)
+        self.incomes = NumberFormatters.currencyFormat(number: incomes, locale: locale)
+        self.expenses =  NumberFormatters.currencyFormat(number: expenses, locale: locale)
+        self.movements = cashflow.movements.map { cashflowItem in
+            CashflowItemViewModel(cashflowItem)
+        }
     }
 }
