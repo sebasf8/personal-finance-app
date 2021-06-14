@@ -26,11 +26,11 @@ class CashflowItemViewModel {
         formatDate()
     }
 
-    var category: CategoryViewModel
+    var category: CategoryIconViewModel
 
     init(_ cashflowItem: CashflowItem) {
         self.cashflowItem = cashflowItem
-        category = CategoryViewModel(cashflowItem.category, repository: CategoryCoreDataRepository.shared)
+        category = CategoryIconViewModelImp(cashflowItem.category)
     }
 
     private func makeFormattedAmount() -> String {

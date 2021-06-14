@@ -20,4 +20,3 @@ class Category {
         self.colorName = colorName
     }
 }
-

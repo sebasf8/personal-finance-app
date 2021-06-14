@@ -15,7 +15,7 @@ enum RowField: Int {
 class CategoryDetailViewController: UITableViewController {
     @IBOutlet private weak var nameTextField: UITextField!
     @IBOutlet private weak var categoryIconView: CategoryIconView!
-    @IBOutlet private weak var colorDisplayView: UIView!
+    @IBOutlet private weak var colorDisplayView: ColorSelectionView!
 
     private var viewModel: CategoryViewModel?
     private var subscribers: Set<AnyCancellable> = []
@@ -47,6 +47,10 @@ class CategoryDetailViewController: UITableViewController {
         subscribers = [
             viewModel.$name.assign(to: \.text!, on: nameTextField)
         ]
+
+        viewModel.$colorName.sink { [weak self] color in
+            self?.colorDisplayView.configure(color: UIColor(named: color) ?? .gray)
+        }.store(in: &subscribers)
 
         categoryIconView.configure(viewModel: viewModel)
     }

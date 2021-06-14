@@ -11,10 +11,10 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Tab Bar Controller-->
+        <!--Tab Bar View Controller-->
         <scene sceneID="RkY-1v-HVB">
             <objects>
-                <tabBarController id="ers-cy-oVc" sceneMemberID="viewController">
+                <tabBarController storyboardIdentifier="TabBarViewController" id="ers-cy-oVc" customClass="TabBarViewController" customModule="Cashflow" customModuleProvider="target" sceneMemberID="viewController">
                     <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="mVi-64-aeY">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
                         <autoresizingMask key="autoresizingMask"/>
@@ -335,7 +335,7 @@
                                                     <autoresizingMask key="autoresizingMask"/>
                                                 </tableViewCellContentView>
                                                 <connections>
-                                                    <segue destination="iq8-K2-P2q" kind="show" identifier="editCategoryDetailSegue" id="Ljl-LI-Jhb"/>
+                                                    <segue destination="iq8-K2-P2q" kind="show" identifier="editCategoryDetailSegue" id="YbR-cc-EIo"/>
                                                 </connections>
                                             </tableViewCell>
                                         </prototypes>
@@ -446,8 +446,7 @@
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="06B-kt-Lq1" firstAttribute="top" secondItem="qeM-hU-sQw" secondAttribute="top" constant="10" id="BlY-uV-iUS"/>
-                                                <constraint firstAttribute="bottom" secondItem="06B-kt-Lq1" secondAttribute="bottom" constant="10" id="F2P-dT-Ucx"/>
+                                                <constraint firstItem="06B-kt-Lq1" firstAttribute="centerY" secondItem="qeM-hU-sQw" secondAttribute="centerY" id="JD5-5l-2Pa"/>
                                                 <constraint firstItem="dSI-oh-Xar" firstAttribute="centerY" secondItem="qeM-hU-sQw" secondAttribute="centerY" id="hB4-ml-bDe"/>
                                                 <constraint firstAttribute="trailing" secondItem="06B-kt-Lq1" secondAttribute="trailing" constant="10" id="kwI-zY-nUb"/>
                                                 <constraint firstItem="dSI-oh-Xar" firstAttribute="leading" secondItem="qeM-hU-sQw" secondAttribute="leadingMargin" constant="10" id="nCz-Ua-eZ4"/>
@@ -466,30 +465,26 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Color" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="O9t-Bg-o4f">
-                                                    <rect key="frame" x="30" y="19.5" width="50.5" height="21"/>
-                                                    <constraints>
-                                                        <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="50" id="oZo-69-bv6"/>
-                                                    </constraints>
+                                                    <rect key="frame" x="30" y="19.5" width="41" height="21"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-nS-qLy">
-                                                    <rect key="frame" x="334.5" y="10" width="40" height="40"/>
+                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sfg-nS-qLy" customClass="ColorSelectionView" customModule="Cashflow" customModuleProvider="target">
+                                                    <rect key="frame" x="341.5" y="17.5" width="25" height="25"/>
                                                     <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstAttribute="width" constant="40" id="CzX-of-NBb"/>
-                                                        <constraint firstAttribute="height" constant="40" id="h2v-Ao-3iZ"/>
+                                                        <constraint firstAttribute="width" constant="25" id="CzX-of-NBb"/>
+                                                        <constraint firstAttribute="height" constant="25" id="h2v-Ao-3iZ"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="sfg-nS-qLy" firstAttribute="top" secondItem="F7v-PL-KOP" secondAttribute="top" constant="10" id="3IF-gL-sBg"/>
+                                                <constraint firstItem="sfg-nS-qLy" firstAttribute="centerY" secondItem="F7v-PL-KOP" secondAttribute="centerY" id="A0h-5C-mPY"/>
                                                 <constraint firstItem="O9t-Bg-o4f" firstAttribute="leading" secondItem="F7v-PL-KOP" secondAttribute="leadingMargin" constant="10" id="Gmz-wA-plp"/>
-                                                <constraint firstAttribute="bottom" secondItem="sfg-nS-qLy" secondAttribute="bottom" constant="10" id="OkG-YE-pXm"/>
+                                                <constraint firstAttribute="trailingMargin" secondItem="sfg-nS-qLy" secondAttribute="trailing" constant="10" id="WNC-2F-BuU"/>
                                                 <constraint firstItem="O9t-Bg-o4f" firstAttribute="centerY" secondItem="F7v-PL-KOP" secondAttribute="centerY" id="XMB-C2-baU"/>
-                                                <constraint firstAttribute="trailing" secondItem="sfg-nS-qLy" secondAttribute="trailing" constant="10" id="ozw-vU-clY"/>
-                                                <constraint firstItem="sfg-nS-qLy" firstAttribute="leading" relation="lessThanOrEqual" secondItem="O9t-Bg-o4f" secondAttribute="trailing" constant="254" id="w4E-Go-qAR"/>
+                                                <constraint firstItem="sfg-nS-qLy" firstAttribute="leading" relation="lessThanOrEqual" secondItem="O9t-Bg-o4f" secondAttribute="trailing" constant="270.5" id="oup-wp-H4L"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
@@ -553,7 +548,7 @@
         <!--Category-->
         <scene sceneID="aWG-i1-UGP">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Um7-zj-g9y" sceneMemberID="viewController">
+                <navigationController storyboardIdentifier="CategoryListNavigationViewController" automaticallyAdjustsScrollViewInsets="NO" id="Um7-zj-g9y" sceneMemberID="viewController">
                     <tabBarItem key="tabBarItem" title="Category" image="rectangle.3.offgrid" catalog="system" id="pEw-lh-QUO">
                         <color key="badgeColor" red="0.34920519589999999" green="0.21212473509999999" blue="0.72899442910000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </tabBarItem>
@@ -573,8 +568,8 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="53p-9R-gG0"/>
-        <segue reference="Ljl-LI-Jhb"/>
+        <segue reference="6fS-7P-jMt"/>
+        <segue reference="YbR-cc-EIo"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="chart.pie" catalog="system" width="128" height="121"/>

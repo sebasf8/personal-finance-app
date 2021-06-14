@@ -11,9 +11,13 @@ class CategoryListViewModel: ObservableObject {
     private var categoriesCached: [CategoryViewModel]
     @Published var categories: [CategoryViewModel]
 
-    init(categories: [CategoryViewModel]) {
-        categoriesCached = categories
+    init(repository: CategoryRepository) {
+        let categories = repository.fetch().map { category in
+            CategoryViewModel(category, repository: repository)
+        }
+
         self.categories = categories
+        categoriesCached = categories
     }
 
     func filterByName(searchText: String) {

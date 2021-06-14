@@ -15,9 +15,11 @@ protocol CashflowRepository {
 }
 
 struct CashflowCoreDataRepository: CashflowRepository {
+    static var shared = CashflowCoreDataRepository()
+
     var cashflowItemRepository: CashflowItemRepository
 
-    init(cashflowItemRepository: CashflowItemRepository) {
+    private init(cashflowItemRepository: CashflowItemRepository = CashflowItemCoreDataRepository.shared) {
         self.cashflowItemRepository = cashflowItemRepository
     }
 

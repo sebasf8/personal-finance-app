@@ -14,13 +14,12 @@ class CategoryListViewController: UIViewController {
     @IBOutlet private weak var titleLabel: UILabel!
     @IBOutlet weak var addCategoryButton: UIButton!
 
-    private var viewModel: CategoryListViewModel?
+    var viewModel: CategoryListViewModel?
     private var subscriptions: Set<AnyCancellable> = []
     private var categoriesDataSource: [CategoryViewModel] = []
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        loadData()
         setupBindings()
         configure()
     }
@@ -34,16 +33,6 @@ class CategoryListViewController: UIViewController {
 
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
-    }
-
-    private func loadData() {
-        let repository = CategoryCoreDataRepository.shared
-        let categories = repository.fetch().map { category in
-            CategoryViewModel(category, repository: repository)
-        }
-
-        viewModel = CategoryListViewModel(categories: categories)
-
     }
 
     private func setupBindings() {
@@ -123,6 +112,8 @@ extension CategoryListViewController: UITableViewDelegate, UITableViewDataSource
 
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         view.endEditing(true)
+
+        performSegue(withIdentifier: "editCategoryDetailSegue", sender: nil)
     }
 }
 

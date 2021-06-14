@@ -18,6 +18,9 @@
 		0A3C266E26656DD8004FD6D0 /* MovementTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A3C266C26656DD8004FD6D0 /* MovementTableViewCell.xib */; };
 		0A3C26702665731B004FD6D0 /* DateFormatters.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3C266F2665731B004FD6D0 /* DateFormatters.swift */; };
 		0A4ED9BE262891A9006B991A /* KeyboardCustomBehaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */; };
+		0A5DF0302677D20600F77BA9 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DF02F2677D20600F77BA9 /* TabBarViewController.swift */; };
+		0A5DF0322677DDB200F77BA9 /* CategoryIconViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DF0312677DDB200F77BA9 /* CategoryIconViewModel.swift */; };
+		0A5DF0342677E2E500F77BA9 /* ColorSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A5DF0332677E2E500F77BA9 /* ColorSelectionView.swift */; };
 		0A60172A26737EE400B72B3D /* CashflowItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172926737EE400B72B3D /* CashflowItem.swift */; };
 		0A60172C26737EF600B72B3D /* Category.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172B26737EF600B72B3D /* Category.swift */; };
 		0A60172E267380B700B72B3D /* CoreDataStack.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A60172D267380B700B72B3D /* CoreDataStack.swift */; };
@@ -79,6 +82,9 @@
 		0A3C266C26656DD8004FD6D0 /* MovementTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MovementTableViewCell.xib; sourceTree = "<group>"; };
 		0A3C266F2665731B004FD6D0 /* DateFormatters.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateFormatters.swift; sourceTree = "<group>"; };
 		0A4ED9BD262891A9006B991A /* KeyboardCustomBehaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardCustomBehaviors.swift; sourceTree = "<group>"; };
+		0A5DF02F2677D20600F77BA9 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		0A5DF0312677DDB200F77BA9 /* CategoryIconViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryIconViewModel.swift; sourceTree = "<group>"; };
+		0A5DF0332677E2E500F77BA9 /* ColorSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorSelectionView.swift; sourceTree = "<group>"; };
 		0A60172926737EE400B72B3D /* CashflowItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CashflowItem.swift; sourceTree = "<group>"; };
 		0A60172B26737EF600B72B3D /* Category.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Category.swift; sourceTree = "<group>"; };
 		0A60172D267380B700B72B3D /* CoreDataStack.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreDataStack.swift; sourceTree = "<group>"; };
@@ -167,7 +173,7 @@
 		0A4ED9A12627A29A006B991A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				0ABD114A266A81000073E6A0 /* Reusable */,
+				0ABD114A266A81000073E6A0 /* Subviews */,
 				0A3C266B26656DD8004FD6D0 /* MovementTableViewCell.swift */,
 				0A3C266C26656DD8004FD6D0 /* MovementTableViewCell.xib */,
 				0A3A8D07266FB56D0062FDE6 /* CategoryTableViewCell.swift */,
@@ -183,6 +189,7 @@
 				0AACAB492663A15600E662A0 /* HomeViewController.swift */,
 				0A78142F266F921600D6F20D /* CategoryListViewController.swift */,
 				0AE544C026713C3200582A02 /* CategoryDetailViewController.swift */,
+				0A5DF02F2677D20600F77BA9 /* TabBarViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -220,6 +227,7 @@
 				0A98CA8A266978F300E8B5F4 /* CashflowItemViewModel.swift */,
 				0A3A8D03266FA5C40062FDE6 /* CategoryViewModel.swift */,
 				0A3A8D0B266FC0CD0062FDE6 /* CategoryListViewModel.swift */,
+				0A5DF0312677DDB200F77BA9 /* CategoryIconViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -236,14 +244,15 @@
 			path = Repository;
 			sourceTree = "<group>";
 		};
-		0ABD114A266A81000073E6A0 /* Reusable */ = {
+		0ABD114A266A81000073E6A0 /* Subviews */ = {
 			isa = PBXGroup;
 			children = (
 				0AACAB4D2664122F00E662A0 /* HeaderView.swift */,
 				0ABD114B266A81170073E6A0 /* CardView.swift */,
 				0A1F6633266E6F0900AC2A67 /* CategoryIconView.swift */,
+				0A5DF0332677E2E500F77BA9 /* ColorSelectionView.swift */,
 			);
-			path = Reusable;
+			path = Subviews;
 			sourceTree = "<group>";
 		};
 		0ACE3F03261935EA00FBC73A = {
@@ -566,12 +575,14 @@
 				0A3C26702665731B004FD6D0 /* DateFormatters.swift in Sources */,
 				0A65533C2662D224001469C8 /* DateExtension.swift in Sources */,
 				0ACE3F1A261935EA00FBC73A /* Cashflow.xcdatamodeld in Sources */,
+				0A5DF0342677E2E500F77BA9 /* ColorSelectionView.swift in Sources */,
 				0AACAB4A2663A15600E662A0 /* HomeViewController.swift in Sources */,
 				0AACAB4E2664122F00E662A0 /* HeaderView.swift in Sources */,
 				0ABD114C266A81170073E6A0 /* CardView.swift in Sources */,
 				0A60173D26738F3B00B72B3D /* CashflowItemCoreDataRepository.swift in Sources */,
 				0A1F6634266E6F0900AC2A67 /* CategoryIconView.swift in Sources */,
 				0ACE3F10261935EA00FBC73A /* AppDelegate.swift in Sources */,
+				0A5DF0322677DDB200F77BA9 /* CategoryIconViewModel.swift in Sources */,
 				0A6017302673811400B72B3D /* DBHelper.swift in Sources */,
 				0A60172C26737EF600B72B3D /* Category.swift in Sources */,
 				0A4ED9BE262891A9006B991A /* KeyboardCustomBehaviors.swift in Sources */,
@@ -593,6 +604,7 @@
 				0AE9F330262767B700101865 /* NumberFormatters.swift in Sources */,
 				0A3A8D09266FB56D0062FDE6 /* CategoryTableViewCell.swift in Sources */,
 				0A60173B2673856200B72B3D /* CashflowItemMO.swift in Sources */,
+				0A5DF0302677D20600F77BA9 /* TabBarViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

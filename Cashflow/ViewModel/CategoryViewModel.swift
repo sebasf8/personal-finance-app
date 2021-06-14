@@ -11,7 +11,7 @@ protocol CategoryViewModelDelegate: AnyObject {
     func newCategoryAdded(_ categoryViewModel: CategoryViewModel)
 }
 
-class CategoryViewModel: ObservableObject, Identifiable {
+class CategoryViewModel: ObservableObject, CategoryIconViewModel {
     weak var delegate: CategoryViewModelDelegate?
 
     private var category: Category

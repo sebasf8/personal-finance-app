@@ -10,25 +10,16 @@ import Combine
 
 class CategoryIconView: UIView {
     private var imageView = UIImageView()
-    private var viewModel: CategoryViewModel?
-    private var subscriptions: Set<AnyCancellable> = []
+    private var viewModel: CategoryIconViewModel?
 
-    func configure(viewModel: CategoryViewModel) {
+    func configure(viewModel: CategoryIconViewModel) {
         self.viewModel = viewModel
-        setupBindings()
-    }
 
-    func setupBindings() {
-        viewModel?.$colorName.sink { [weak self] colorName in
-            let color = UIColor(named: colorName)
+        let color = UIColor(named: viewModel.colorName)
+        imageView.tintColor = color
+        imageView.image = UIImage(named: viewModel.assetName)
+        layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
 
-            self?.imageView.tintColor = color
-            self?.layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
-        }.store(in: &subscriptions)
-
-        viewModel?.$assetName.sink { [weak self] assetName in
-            self?.imageView.image = UIImage(named: assetName)
-        }.store(in: &subscriptions)
     }
 
     override func layoutSubviews() {
