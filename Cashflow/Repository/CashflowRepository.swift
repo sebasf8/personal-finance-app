@@ -9,9 +9,9 @@ import Foundation
 import CoreData
 
 protocol CashflowRepository {
-    func fetch() -> Cashflow
-    func fetchFor(year: Int) -> Cashflow
-    func fetchFor(month: Int) -> Cashflow
+    func fetch() -> CashflowModel
+    func fetchFor(year: Int) -> CashflowModel
+    func fetchFor(month: Int) -> CashflowModel
 }
 
 struct CashflowCoreDataRepository: CashflowRepository {
@@ -23,18 +23,18 @@ struct CashflowCoreDataRepository: CashflowRepository {
         self.cashflowItemRepository = cashflowItemRepository
     }
 
-    func fetch() -> Cashflow {
-        return Cashflow(movements: cashflowItemRepository.fetch())
+    func fetch() -> CashflowModel {
+        return CashflowModel(movements: cashflowItemRepository.fetch())
     }
 
-    func fetchFor(year: Int) -> Cashflow {
+    func fetchFor(year: Int) -> CashflowModel {
         let movements: [CashflowItem] = cashflowItemRepository.fetchFor(year: year)
-        return Cashflow(movements: movements)
+        return CashflowModel(movements: movements)
     }
 
-    func fetchFor(month: Int) -> Cashflow {
+    func fetchFor(month: Int) -> CashflowModel {
         let movements: [CashflowItem] = cashflowItemRepository.fetchFor(month: month)
 
-        return Cashflow(movements: movements)
+        return CashflowModel(movements: movements)
     }
 }

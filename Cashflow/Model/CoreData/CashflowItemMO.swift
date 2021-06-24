@@ -20,32 +20,29 @@ final class CashflowItemMO: NSManagedObject {
     @NSManaged var date: Date
     @NSManaged var name: String
     @NSManaged var typeValue: String
-    @NSManaged var category: CategoryMO?
+    @NSManaged var categoryMO: CategoryMO?
 
 }
 
-extension CashflowItemMO {
-    func convertToCashflowItem() -> CashflowItem {
-        guard let category = category else {
-            fatalError()
+extension CashflowItemMO: CashflowItem {
+    var type: InvoiceType {
+        get {
+            InvoiceType(rawValue: typeValue) ?? .expense
         }
-
-        return CashflowItem(uuid: uuid ?? UUID(),
-                     name: name,
-                     amount: amount,
-                     date: date,
-                     type: InvoiceType(rawValue: typeValue) ?? .expense,
-                     category: category.convertToCategory())
+        set {
+            typeValue = newValue.rawValue
+        }
     }
 
-    func copyFrom(_ cashflowItem: CashflowItem) {
-        let categoryMO = CategoryCoreDataRepository.shared.fetchCategory(for: cashflowItem.category)
-
-        uuid = cashflowItem.uuid
-        name = cashflowItem.name
-        amount = cashflowItem.amount
-        date = cashflowItem.date
-        typeValue = cashflowItem.type.rawValue
-        category = categoryMO
+    var category: Category {
+        get {
+            return categoryMO ?? CategoryMO(context: CoreDataStack.shared.context)
+        }
+        set {
+            guard let category = newValue as? CategoryMO else {
+                fatalError("Implementation of Category is not a Managed Object")
+            }
+            categoryMO = category
+        }
     }
 }

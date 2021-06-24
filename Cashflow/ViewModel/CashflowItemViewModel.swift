@@ -26,11 +26,11 @@ class CashflowItemViewModel {
         formatDate()
     }
 
-    var category: CategoryIconViewModel
+    var category: CategoryViewModel
 
     init(_ cashflowItem: CashflowItem) {
         self.cashflowItem = cashflowItem
-        category = CategoryIconViewModelImp(cashflowItem.category)
+        category = CategoryViewModel(cashflowItem.category)
     }
 
     private func makeFormattedAmount() -> String {

@@ -19,6 +19,7 @@ class CategoryDetailViewController: UITableViewController {
 
     private var viewModel: CategoryViewModel?
     private var subscribers: Set<AnyCancellable> = []
+
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -26,17 +27,27 @@ class CategoryDetailViewController: UITableViewController {
         setupView()
     }
 
+    func configure(viewModel: CategoryViewModel) {
+        self.viewModel = viewModel
+    }
+
     private func setupView() {
+        configureNavigationBar()
+        configureCategoryIconView()
+    }
+
+    private func configureNavigationBar() {
         let cancelButton = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(cancel))
         let saveButton = UIBarButtonItem(title: "Save", style: .plain, target: self, action: #selector(save))
 
         navigationItem.leftBarButtonItem = cancelButton
         navigationItem.rightBarButtonItem = saveButton
-
     }
 
-    func configure(viewModel: CategoryViewModel) {
-        self.viewModel = viewModel
+    private func configureCategoryIconView() {
+        if let viewModel = viewModel {
+            categoryIconView.configure(viewModel: viewModel)
+        }
     }
 
     private func setupBindings() {
@@ -51,8 +62,6 @@ class CategoryDetailViewController: UITableViewController {
         viewModel.$colorName.sink { [weak self] color in
             self?.colorDisplayView.configure(color: UIColor(named: color) ?? .gray)
         }.store(in: &subscribers)
-
-        categoryIconView.configure(viewModel: viewModel)
     }
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
@@ -65,14 +74,32 @@ class CategoryDetailViewController: UITableViewController {
     }
 
     @objc func cancel() {
+        viewModel?.discardChages()
         navigationController?.popViewController(animated: true)
     }
 
     @objc func save() {
         viewModel?.nameHasChanged(nameTextField.text ?? "")
-
         viewModel?.save()
         navigationController?.popViewController(animated: true)
+    }
 
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        guard let collectionVC = segue.destination as? CategoryCollectionViewController else {
+            return
+        }
+
+        switch segue.identifier {
+        case "iconSelectionSegue":
+            let collectionViewModel = CategoryImageCollectionViewModel()
+            collectionViewModel.delegate = self.viewModel
+            collectionVC.configure(viewModel: collectionViewModel)
+        case "colorSelectionSegue":
+            break
+//            collectionVC.configure(viewModel: CategoryColorsCollectionViewModel())
+        default:
+            return
+        }
     }
 }

@@ -11,20 +11,11 @@ enum InvoiceType: String {
     case income = "Income", expense = "Expense"
 }
 
-class CashflowItem {
-    var uuid: UUID?
-    var name: String
-    var amount: Double
-    var date: Date
-    var type: InvoiceType
-    var category: Category
-
-    init(uuid: UUID? = nil, name: String, amount: Double, date: Date, type: InvoiceType, category: Category) {
-        self.uuid = uuid
-        self.name = name
-        self.amount = amount
-        self.date = date
-        self.type = type
-        self.category = category
-    }
+protocol CashflowItem {
+    var uuid: UUID? { get }
+    var name: String { get set }
+    var amount: Double { get set }
+    var date: Date { get set }
+    var type: InvoiceType { get set }
+    var category: Category { get set }
 }

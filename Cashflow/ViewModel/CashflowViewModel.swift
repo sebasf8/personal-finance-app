@@ -8,7 +8,7 @@
 import Foundation
 
 class CashflowViewModel {
-    private let cashflow: Cashflow
+    private let cashflow: CashflowModel
     private let repository: CashflowRepository
 
     @Published var currentBalance: String

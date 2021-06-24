@@ -6,7 +6,7 @@
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="typeValue" attributeType="String" defaultValueString="Expense"/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="category" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryMO" inverseName="cashflowItem" inverseEntity="CategoryMO"/>
+        <relationship name="categoryMO" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CategoryMO" inverseName="cashflowItem" inverseEntity="CategoryMO"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="uuid"/>
@@ -15,10 +15,10 @@
     </entity>
     <entity name="CategoryMO" representedClassName=".CategoryMO" syncable="YES">
         <attribute name="assetName" attributeType="String" defaultValueString="credit_card"/>
-        <attribute name="color" attributeType="String" defaultValueString="category_color_0"/>
+        <attribute name="color" attributeType="String" defaultValueString="category_color_gray"/>
         <attribute name="name" attributeType="String" defaultValueString=""/>
         <attribute name="uuid" optional="YES" attributeType="UUID" usesScalarValueType="NO"/>
-        <relationship name="cashflowItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CashflowItemMO" inverseName="category" inverseEntity="CashflowItemMO"/>
+        <relationship name="cashflowItem" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="CashflowItemMO" inverseName="categoryMO" inverseEntity="CashflowItemMO"/>
         <uniquenessConstraints>
             <uniquenessConstraint>
                 <constraint value="uuid"/>

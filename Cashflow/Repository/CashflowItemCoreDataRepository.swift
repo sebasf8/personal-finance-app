@@ -13,6 +13,7 @@ protocol CashflowItemRepository {
     func fetchFor(year: Int) -> [CashflowItem]
     func fetchFor(month: Int) -> [CashflowItem]
     func save(_ cashflowItem: CashflowItem)
+    func make() -> CashflowItem
 }
 
 class CashflowItemCoreDataRepository {
@@ -45,9 +46,7 @@ extension CashflowItemCoreDataRepository: CashflowItemRepository {
 
         switch result {
         case .success(let cashflowItems):
-            return cashflowItems.map { entity in
-                entity.convertToCashflowItem()
-            }
+            return cashflowItems
         case .failure(_):
             return []
         }
@@ -63,9 +62,7 @@ extension CashflowItemCoreDataRepository: CashflowItemRepository {
 
         switch result {
         case .success(let cashflowItems):
-            return cashflowItems.map { entity in
-                entity.convertToCashflowItem()
-            }
+            return cashflowItems
         case .failure(_):
             return []
         }
@@ -82,9 +79,7 @@ extension CashflowItemCoreDataRepository: CashflowItemRepository {
 
         switch result {
         case .success(let cashflowItems):
-            return cashflowItems.map { entity in
-                entity.convertToCashflowItem()
-            }
+            return cashflowItems
         case .failure(_):
             return []
         }
@@ -98,21 +93,26 @@ extension CashflowItemCoreDataRepository: CashflowItemRepository {
         }
     }
 
+    func make() -> CashflowItem {
+        let category = CategoryCoreDataRepository.shared.make()
+        let cashflowItem = CashflowItemMO(context: dbHelper.context)
+        cashflowItem.category = category
+
+        return cashflowItem
+    }
+
     private func add(_ cashflowItem: CashflowItem) {
-        let entity = CashflowItemMO.entity()
-        let cashflowItemMO = CashflowItemMO(entity: entity, insertInto: dbHelper.context)
-
-        cashflowItem.uuid = UUID()
-        cashflowItemMO.copyFrom(cashflowItem)
-
+        guard let cashflowItemMO = cashflowItem as? CashflowItemMO else {
+            fatalError("Implementation of cashflowItem is not a Managed Object")
+        }
+        cashflowItemMO.uuid = UUID()
         dbHelper.create(cashflowItemMO)
     }
 
     private func update(for cashflowItem: CashflowItem) {
-        guard let cashflowItemMO = fetchCategory(for: cashflowItem) else { return }
-
-        cashflowItemMO.copyFrom(cashflowItem)
-
+        guard let cashflowItemMO = cashflowItem as? CashflowItemMO else {
+            fatalError("Implementation of cashflowItem is not a Managed Object")
+        }
         dbHelper.update(cashflowItemMO)
     }
 }

@@ -73,9 +73,7 @@ class CategoryListViewController: UIViewController {
 
         if segue.identifier == "addCategoryDetailSegue" {
             let categoryRepository = CategoryCoreDataRepository.shared
-            let viewModel = CategoryViewModel(Category(name: "",
-                                                       assetName: "credit_card",
-                                                       colorName: "category_color_0"),
+            let viewModel = CategoryViewModel(categoryRepository.make(),
                                               repository: categoryRepository)
 
             viewModel.delegate = self.viewModel

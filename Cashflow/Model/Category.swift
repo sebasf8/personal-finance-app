@@ -7,16 +7,9 @@
 
 import Foundation
 
-class Category {
-    var uuid: UUID?
-    var name: String
-    var assetName: String
-    var colorName: String
-
-    init(uuid: UUID? = nil, name: String, assetName: String, colorName: String) {
-        self.uuid = uuid
-        self.name = name
-        self.assetName = assetName
-        self.colorName = colorName
-    }
+protocol Category {
+    var uuid: UUID? { get set }
+    var name: String { get set }
+    var imageName: CategoryImage { get set }
+    var colorName: CategoryColor { get set }
 }

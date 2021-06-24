@@ -16,8 +16,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak private var movementsTable: UITableView!
 
     private let movementCellId = "movementCell"
-    private let context = CoreDataStack.shared.persistentContainer.viewContext
-
     var cashflowViewModel: CashflowViewModel?
 
     override func viewDidLoad() {
@@ -25,6 +23,10 @@ class HomeViewController: UIViewController {
 
         configureHeader()
         configureMovementsTable()
+    }
+
+    override func viewWillAppear(_ animated: Bool) {
+        movementsTable.reloadData()
     }
 
     override var preferredStatusBarStyle: UIStatusBarStyle {

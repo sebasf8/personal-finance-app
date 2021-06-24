@@ -11,22 +11,24 @@ protocol CategoryViewModelDelegate: AnyObject {
     func newCategoryAdded(_ categoryViewModel: CategoryViewModel)
 }
 
-class CategoryViewModel: ObservableObject, CategoryIconViewModel {
+class CategoryViewModel: ObservableObject {
     weak var delegate: CategoryViewModelDelegate?
 
     private var category: Category
     private let repository: CategoryRepository
+    private var selectedImage: CategoryImage?
 
     @Published var assetName: String
     @Published var colorName: String
     @Published var name: String
 
-    init(_ category: Category, repository: CategoryRepository) {
+    init(_ category: Category,
+         repository: CategoryRepository = CategoryCoreDataRepository.shared) {
         self.category = category
         self.repository = repository
 
-        assetName = category.assetName
-        colorName = category.colorName
+        assetName = category.imageName.rawValue
+        colorName = category.colorName.rawValue
         name = category.name
     }
 
@@ -49,7 +51,29 @@ class CategoryViewModel: ObservableObject, CategoryIconViewModel {
     }
 
     func save() {
+        if let imageSelected = selectedImage {
+            category.imageName = imageSelected
+        }
+
         repository.save(category)
         delegate?.newCategoryAdded(self)
+    }
+
+    func discardChages() {
+        loadDataFromModel()
+    }
+
+    private func loadDataFromModel() {
+        assetName = category.imageName.rawValue
+        colorName = category.colorName.rawValue
+        name = category.name
+    }
+}
+
+// MARK: - CategoryImageCollectionViewModelDelegate
+extension CategoryViewModel: CategoryImageCollectionViewModelDelegate {
+    func imageWasSelected(_ viewModel: CategoryImageCollectionViewModel, selectedImage: CategoryImage) {
+        self.selectedImage = selectedImage
+        assetName = selectedImage.rawValue
     }
 }

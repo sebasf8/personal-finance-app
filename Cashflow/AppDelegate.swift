@@ -15,9 +15,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        // Initialize CoreData
         _ = CoreDataStack.shared.context
-//        loadData()
+//        loadData(context)
         return true
     }
 
@@ -35,57 +34,61 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                      didDiscardSceneSessions sceneSessions: Set<UISceneSession>) {
     }
 
-    private func loadData() {
+    private func loadData(_ context: NSManagedObjectContext) {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
 
         let date1 = formatter.date(from: "2021/06/29 22:31")!
         let date2 = formatter.date(from: "2021/06/28 22:31")!
-        let date3 = formatter.date(from: "2021/03/29 22:31")!
         let date4 = formatter.date(from: "2021/06/29 22:31")!
 
-        let category1 = Category(name: "Fuel",
-                                 assetName: "fuel",
-                                 colorName: "category_color_1")
+        let category1 = CategoryMO(context: context)
+        category1.name = "Fuel"
+        category1.imageName = .fuel
+        category1.colorName = .purple
 
-        let category2 = Category(name: "Credit Card",
-                                 assetName: "credit_card",
-                                 colorName: "category_color_2")
+        let category2 = CategoryMO(context: context)
+        category2.name = "Credit Card"
+        category2.imageName = .creditCard
+        category2.colorName = .red
 
-        let category3 = Category(name: "Dinner",
-                                 assetName: "dinner",
-                                 colorName: "category_color_3")
+        let category3 = CategoryMO(context: context)
+        category3.name = "Dinner"
+        category3.imageName = .dinner
+        category3.colorName = .gray
 
-        let category4 = Category(name: "Salary",
-                                 assetName: "credit_card",
-                                 colorName: "category_color_1")
+        let category4 = CategoryMO(context: context)
+        category4.name = "Salary"
+        category4.imageName = .creditCard
+        category4.colorName = .green
 
-        let income1 = CashflowItem(uuid: nil,
-                                   name: "Salary",
-                                   amount: 1200,
-                                   date: date1,
-                                   type: .income,
-                                   category: category4)
+        let income1 = CashflowItemMO(context: context)
+        income1.name = "Salary"
+        income1.amount = 1200
+        income1.date = date1
+        income1.type = .income
+        income1.category = category4
 
-        let expense1 = CashflowItem(uuid: nil,
-                                    name: "Rent",
-                                    amount: 900,
-                                    date: date2,
-                                    type: .expense,
-                                    category: category2)
+        let expense1 = CashflowItemMO(context: context)
+        expense1.name = "Rent"
+        expense1.amount = 900
+        expense1.date = date2
+        expense1.type = .expense
+        expense1.category = category2
 
-        let expense2 = CashflowItem(uuid: nil,
-                                    name: "Food",
-                                    amount: 200,
-                                    date: date3,
-                                    type: .expense,
-                                    category: category3)
+        let expense2 = CashflowItemMO(context: context)
+        expense2.name = "Food"
+        expense2.amount = 200
+        expense2.date = date2
+        expense2.type = .expense
+        expense2.category = category3
 
-        let expense3 = CashflowItem(name: "Fuel",
-                                    amount: 17.5,
-                                    date: date4,
-                                    type: .expense,
-                                    category: category1)
+        let expense3 = CashflowItemMO(context: context)
+        expense3.name = "Fuel"
+        expense3.amount = 17.5
+        expense3.date = date4
+        expense3.type = .expense
+        expense3.category = category1
 
         let categoryRepository = CategoryCoreDataRepository.shared
         let itemRepository = CashflowItemCoreDataRepository.shared

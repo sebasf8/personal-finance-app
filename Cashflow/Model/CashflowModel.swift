@@ -8,7 +8,7 @@
 import Foundation
 import CoreData
 
-class Cashflow {
+struct CashflowModel {
     var movements: [CashflowItem] = []
     var totalIncomes: Double {
         sumarizeMovementsOf(type: .income)

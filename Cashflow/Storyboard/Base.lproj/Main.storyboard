@@ -454,7 +454,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="CaU-tD-H2m" kind="show" id="53p-9R-gG0"/>
+                                            <segue destination="CaU-tD-H2m" kind="show" identifier="iconSelectionSegue" id="53p-9R-gG0"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" rowHeight="60" id="QTM-ve-Ccn">
@@ -488,7 +488,7 @@
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
-                                            <segue destination="CaU-tD-H2m" kind="show" id="6fS-7P-jMt"/>
+                                            <segue destination="CaU-tD-H2m" kind="show" identifier="colorSelectionSegue" id="6fS-7P-jMt"/>
                                         </connections>
                                     </tableViewCell>
                                 </cells>
@@ -510,10 +510,10 @@
             </objects>
             <point key="canvasLocation" x="748" y="1499"/>
         </scene>
-        <!--Collection View Controller-->
+        <!--Category Collection View Controller-->
         <scene sceneID="xXS-Xw-mka">
             <objects>
-                <collectionViewController id="CaU-tD-H2m" sceneMemberID="viewController">
+                <collectionViewController id="CaU-tD-H2m" customClass="CategoryCollectionViewController" customModule="Cashflow" customModuleProvider="target" sceneMemberID="viewController">
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="V8l-6H-fAw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -525,7 +525,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="0re-e0-KZ0">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="CategoryCell" id="0re-e0-KZ0">
                                 <rect key="frame" x="0.0" y="0.0" width="128" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <collectionViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" id="Ooh-aH-57K">

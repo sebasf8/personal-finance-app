@@ -20,19 +20,22 @@ final class CategoryMO: NSManagedObject {
     @NSManaged var cashflowItem: CashflowItemMO?
 }
 
-extension CategoryMO {
-    func convertToCategory() -> Category {
-        Category(uuid: uuid ?? UUID(),
-                 name: name,
-                 assetName: assetName,
-                 colorName: color)
-
+extension CategoryMO: Category {
+    var imageName: CategoryImage {
+        get {
+            CategoryImage(rawValue: assetName) ?? .creditCard
+        }
+        set {
+            assetName = newValue.rawValue
+        }
     }
 
-    func copyFrom(_ category: Category) {
-        uuid = category.uuid
-        assetName = category.assetName
-        color = category.colorName
-        name = category.name
+    var colorName: CategoryColor {
+        get {
+            CategoryColor(rawValue: color) ?? .gray
+        }
+        set {
+            color = newValue.rawValue
+        }
     }
 }

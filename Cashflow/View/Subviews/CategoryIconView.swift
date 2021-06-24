@@ -10,16 +10,12 @@ import Combine
 
 class CategoryIconView: UIView {
     private var imageView = UIImageView()
-    private var viewModel: CategoryIconViewModel?
+    private var viewModel: CategoryViewModel?
+    private var suscribers: Set<AnyCancellable> = []
 
-    func configure(viewModel: CategoryIconViewModel) {
+    func configure(viewModel: CategoryViewModel) {
         self.viewModel = viewModel
-
-        let color = UIColor(named: viewModel.colorName)
-        imageView.tintColor = color
-        imageView.image = UIImage(named: viewModel.assetName)
-        layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
-
+        setupBindings()
     }
 
     override func layoutSubviews() {
@@ -37,5 +33,21 @@ class CategoryIconView: UIView {
         ]
 
         NSLayoutConstraint.activate(constraints)
+    }
+
+    private func setupBindings() {
+        guard let viewModel = viewModel else {
+            return
+        }
+
+        viewModel.$assetName.sink(receiveValue: { assetName in
+            self.imageView.image = UIImage(named: assetName)
+        }).store(in: &suscribers)
+
+        viewModel.$colorName.sink(receiveValue: { colorName in
+            let color = UIColor(named: colorName)
+            self.imageView.tintColor = color
+            self.layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
+        }).store(in: &suscribers)
     }
 }

@@ -11,6 +11,7 @@ import CoreData
 protocol CategoryRepository {
     func fetch() -> [Category]
     func save(_ category: Category)
+    func make() -> Category
 }
 
 class CategoryCoreDataRepository {
@@ -43,9 +44,7 @@ extension CategoryCoreDataRepository: CategoryRepository {
 
         switch result {
         case .success(let categories):
-            return categories.map { entity in
-                entity.convertToCategory()
-            }
+            return categories
         case .failure(_):
             return []
         }
@@ -60,18 +59,22 @@ extension CategoryCoreDataRepository: CategoryRepository {
     }
 
     private func add(_ category: Category) {
-        let entity = CategoryMO.entity()
-        let categoryMO = CategoryMO(entity: entity, insertInto: dbHelper.context)
-        category.uuid = UUID()
-
-        categoryMO.copyFrom(category)
+        guard let categoryMO = category as? CategoryMO else {
+            fatalError("Implementation of Category is not a Managed Object")
+        }
+        categoryMO.uuid = UUID()
         dbHelper.create(categoryMO)
     }
 
     private func update(for category: Category) {
-        guard let categoryMO = fetchCategory(for: category) else { return }
-
-        categoryMO.copyFrom(category)
+        guard let categoryMO = category as? CategoryMO else {
+            fatalError("Implementation of Category is not a Managed Object")
+        }
         dbHelper.update(categoryMO)
+    }
+
+    func make() -> Category {
+        let entity = CategoryMO.entity()
+        return CategoryMO(entity: entity, insertInto: dbHelper.context)
     }
 }
