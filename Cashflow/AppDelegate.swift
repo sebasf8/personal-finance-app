@@ -15,7 +15,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication,
                      didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
 
-        _ = CoreDataStack.shared.context
+        let context = CoreDataStack.shared.context
 //        loadData(context)
         return true
     }
@@ -38,9 +38,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let formatter = DateFormatter()
         formatter.dateFormat = "yyyy/MM/dd HH:mm"
 
-        let date1 = formatter.date(from: "2021/06/29 22:31")!
-        let date2 = formatter.date(from: "2021/06/28 22:31")!
-        let date4 = formatter.date(from: "2021/06/29 22:31")!
+        let date1 = formatter.date(from: "2021/07/29 22:31")!
+        let date2 = formatter.date(from: "2021/07/28 22:31")!
+        let date4 = formatter.date(from: "2021/07/29 22:31")!
 
         let category1 = CategoryMO(context: context)
         category1.name = "Fuel"
@@ -90,13 +90,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         expense3.type = .expense
         expense3.category = category1
 
-        let categoryRepository = CategoryCoreDataRepository.shared
         let itemRepository = CashflowItemCoreDataRepository.shared
-
-        categoryRepository.save(category1)
-        categoryRepository.save(category2)
-        categoryRepository.save(category3)
-        categoryRepository.save(category4)
 
         itemRepository.save(income1)
         itemRepository.save(expense1)

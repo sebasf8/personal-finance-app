@@ -32,7 +32,7 @@ class CategoryListViewModel: ObservableObject {
 }
 
 extension CategoryListViewModel: CategoryViewModelDelegate {
-    func newCategoryAdded(_ categoryViewModel: CategoryViewModel) {
+    func needsRefresh(_ categoryViewModel: CategoryViewModel) {
         categoriesCached.append(categoryViewModel)
         categories.append(categoryViewModel)
     }

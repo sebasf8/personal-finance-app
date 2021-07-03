@@ -26,6 +26,7 @@ class HomeViewController: UIViewController {
     }
 
     override func viewWillAppear(_ animated: Bool) {
+        cashflowViewModel?.reload()
         movementsTable.reloadData()
     }
 

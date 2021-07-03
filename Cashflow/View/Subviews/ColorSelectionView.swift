@@ -14,9 +14,10 @@ class ColorSelectionView: UIView {
 
     override func layoutSubviews() {
         layer.cornerRadius = 6
-        layer.borderColor = UIColor.systemGray4.cgColor
-        layer.borderWidth = 1
-        layer.masksToBounds = true
+        layer.borderColor = UIColor.white.cgColor
+        layer.borderWidth = 2
+
+        addShadow()
     }
 
 }

@@ -44,10 +44,9 @@ class CategoryIconView: UIView {
             self.imageView.image = UIImage(named: assetName)
         }).store(in: &suscribers)
 
-        viewModel.$colorName.sink(receiveValue: { colorName in
-            let color = UIColor(named: colorName)
+        viewModel.$color.sink(receiveValue: { color in
             self.imageView.tintColor = color
-            self.layer.backgroundColor = color?.withAlphaComponent(0.2).cgColor
+            self.layer.backgroundColor = color.withAlphaComponent(0.2).cgColor
         }).store(in: &suscribers)
     }
 }

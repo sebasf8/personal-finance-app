@@ -59,8 +59,8 @@ class CategoryDetailViewController: UITableViewController {
             viewModel.$name.assign(to: \.text!, on: nameTextField)
         ]
 
-        viewModel.$colorName.sink { [weak self] color in
-            self?.colorDisplayView.configure(color: UIColor(named: color) ?? .gray)
+        viewModel.$color.sink { [weak self] color in
+            self?.colorDisplayView.configure(color: color)
         }.store(in: &subscribers)
     }
 
@@ -86,18 +86,16 @@ class CategoryDetailViewController: UITableViewController {
 
     // MARK: - Navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        guard let collectionVC = segue.destination as? CategoryCollectionViewController else {
-            return
-        }
-
-        switch segue.identifier {
-        case "iconSelectionSegue":
+        switch segue.destination {
+        case let categoryCollectionVC as CategoryCollectionViewController:
             let collectionViewModel = CategoryImageCollectionViewModel()
             collectionViewModel.delegate = self.viewModel
-            collectionVC.configure(viewModel: collectionViewModel)
-        case "colorSelectionSegue":
-            break
-//            collectionVC.configure(viewModel: CategoryColorsCollectionViewModel())
+            categoryCollectionVC.configure(viewModel: collectionViewModel)
+
+        case let colorCollectionVC as ColorCollectionViewController:
+            let collectionViewModel = ColorCollectionViewModel()
+            collectionViewModel.delegate = self.viewModel
+            colorCollectionVC.configure(viewModel: collectionViewModel)
         default:
             return
         }

@@ -6,9 +6,10 @@
 //
 
 import Combine
+import UIKit.UIColor
 
 protocol CategoryViewModelDelegate: AnyObject {
-    func newCategoryAdded(_ categoryViewModel: CategoryViewModel)
+    func needsRefresh(_ categoryViewModel: CategoryViewModel)
 }
 
 class CategoryViewModel: ObservableObject {
@@ -17,9 +18,10 @@ class CategoryViewModel: ObservableObject {
     private var category: Category
     private let repository: CategoryRepository
     private var selectedImage: CategoryImage?
+    private var selectedColor: CategoryColor?
 
     @Published var assetName: String
-    @Published var colorName: String
+    @Published var color: UIColor
     @Published var name: String
 
     init(_ category: Category,
@@ -28,13 +30,12 @@ class CategoryViewModel: ObservableObject {
         self.repository = repository
 
         assetName = category.imageName.rawValue
-        colorName = category.colorName.rawValue
+        color = UIColor(named: category.colorName.rawValue) ?? .gray
         name = category.name
     }
 
     func nameContains(text: String ) -> Bool {
         name.lowercased().contains(text.lowercased())
-
     }
 
     func nameHasChanged(_ name: String) {
@@ -42,30 +43,21 @@ class CategoryViewModel: ObservableObject {
         category.name = name
     }
 
-    func changeColor(_ colorName: String) {
-        self.colorName = colorName
-    }
-
-    func changeIcon(_ imageName: String) {
-        assetName = imageName
-    }
-
     func save() {
         if let imageSelected = selectedImage {
             category.imageName = imageSelected
         }
+        if let colorSelected = selectedColor {
+            category.colorName = colorSelected
+        }
 
         repository.save(category)
-        delegate?.newCategoryAdded(self)
+        delegate?.needsRefresh(self)
     }
 
     func discardChages() {
-        loadDataFromModel()
-    }
-
-    private func loadDataFromModel() {
         assetName = category.imageName.rawValue
-        colorName = category.colorName.rawValue
+        color = UIColor(named: category.colorName.rawValue) ?? .gray
         name = category.name
     }
 }
@@ -75,5 +67,13 @@ extension CategoryViewModel: CategoryImageCollectionViewModelDelegate {
     func imageWasSelected(_ viewModel: CategoryImageCollectionViewModel, selectedImage: CategoryImage) {
         self.selectedImage = selectedImage
         assetName = selectedImage.rawValue
+    }
+}
+
+// MARK: - ColorCollectionViewModelDelegate
+extension CategoryViewModel: ColorCollectionViewModelDelegate {
+    func colorWasSelected(_ viewModel: ColorCollectionViewModel, selectedColor: CategoryColor) {
+        self.selectedColor = selectedColor
+        color = UIColor(named: selectedColor.rawValue) ?? .gray
     }
 }

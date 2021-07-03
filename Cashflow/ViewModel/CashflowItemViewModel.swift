@@ -45,9 +45,9 @@ class CashflowItemViewModel {
 
     private func getLabelColor() -> String {
         if cashflowItem.type == .expense {
-            return "expense_color"
+            return InvoiceColor.expense.rawValue
         } else {
-            return "income_color"
+            return InvoiceColor.income.rawValue
         }
     }
 

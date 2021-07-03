@@ -8,20 +8,30 @@
 import Foundation
 
 class CashflowViewModel {
-    private let cashflow: CashflowModel
     private let repository: CashflowRepository
-
-    @Published var currentBalance: String
-    @Published var period: String
-    @Published var incomes: String
-    @Published var expenses: String
-    @Published var movements: [CashflowItemViewModel]
+    private var cashflow: CashflowModel
+    
+    @Published var currentBalance: String = "0"
+    @Published var period: String = ""
+    @Published var incomes: String = "0"
+    @Published var expenses: String = "0"
+    @Published var movements: [CashflowItemViewModel] = []
 
     init(repository: CashflowRepository) {
         let date = Date()
-        self.repository = repository
-        self.cashflow = repository.fetchFor(month: date.month)
 
+        self.repository = repository
+        cashflow = repository.fetchFor(month: date.month)
+        formatData(date: date)
+    }
+
+    public func reload() {
+        let date = Date()
+        cashflow = repository.fetchFor(month: date.month)
+        formatData(date: date)
+    }
+
+    private func formatData(date: Date) {
         let balance = cashflow.currentBalance as NSNumber
         let incomes = cashflow.totalIncomes as NSNumber
         let expenses = cashflow.totalExpenses as NSNumber
