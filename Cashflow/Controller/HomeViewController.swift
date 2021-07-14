@@ -7,6 +7,7 @@
 
 import UIKit
 import CoreData
+import Combine
 
 class HomeViewController: UIViewController {
     @IBOutlet weak private var currentBalanceLabel: UILabel!
@@ -16,7 +17,9 @@ class HomeViewController: UIViewController {
     @IBOutlet weak private var movementsTable: UITableView!
 
     private let movementCellId = "movementCell"
+    private var movementsCount = 0
     var cashflowViewModel: CashflowViewModel?
+    var suscribers: Set<AnyCancellable> = []
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,21 +28,22 @@ class HomeViewController: UIViewController {
         configureMovementsTable()
     }
 
-    override func viewWillAppear(_ animated: Bool) {
-        cashflowViewModel?.reload()
-        movementsTable.reloadData()
-    }
-
     override var preferredStatusBarStyle: UIStatusBarStyle {
         return .lightContent
     }
 
     // MARK: - Setup
     private func configureHeader() {
-        currentBalanceLabel.text = cashflowViewModel?.currentBalance
-        periodButton.setTitle(cashflowViewModel?.period, for: .normal)
-        incomeInPeriodLabel.text = cashflowViewModel?.incomes
-        expenseInPeriodLabel.text = cashflowViewModel?.expenses
+        guard let viewModel = cashflowViewModel else { return }
+        suscribers = [
+            viewModel.$currentBalance.assign(to: \.text!, on: currentBalanceLabel),
+            viewModel.$incomes.assign(to: \.text!, on: incomeInPeriodLabel),
+            viewModel.$expenses.assign(to: \.text!, on: expenseInPeriodLabel)
+        ]
+
+        viewModel.$period.sink { [weak self] period in
+            self?.periodButton.setTitle(viewModel.period, for: .normal)
+        }.store(in: &suscribers)
     }
 
     private func configureMovementsTable() {
@@ -49,6 +53,11 @@ class HomeViewController: UIViewController {
         movementsTable.rowHeight = UITableView.automaticDimension
         movementsTable.estimatedRowHeight = 100
         movementsTable.register(cellView, forCellReuseIdentifier: movementCellId)
+
+        cashflowViewModel?.$movementsCount.sink { [weak self] movementsCount in
+            self?.movementsCount = movementsCount
+            self?.movementsTable.reloadData()
+        }.store(in: &suscribers)
     }
 
     @IBAction func periodTapped(_ sender: Any) {
@@ -64,14 +73,14 @@ class HomeViewController: UIViewController {
 // MARK: - UITableViewDelegate, UITableViewDataSource
 extension HomeViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        cashflowViewModel?.movements.count ?? 0
+       movementsCount
     }
 
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: movementCellId, for: indexPath)
 
         if let cell = cell as? MovementTableViewCell, let viewModel = cashflowViewModel {
-            let movement = viewModel.movements[indexPath.row]
+            let movement = viewModel.getMovement(at: indexPath.row)
             cell.configure(movement: movement)
         }
 

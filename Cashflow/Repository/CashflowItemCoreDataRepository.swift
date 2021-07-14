@@ -53,27 +53,21 @@ extension CashflowItemCoreDataRepository: CashflowItemRepository {
     }
 
     func fetchFor(year: Int) -> [CashflowItem] {
-        let startOfYear = Calendar.current.startOfYear(Date()) as NSDate
-        let endOfYear = Calendar.current.endOfYear(Date()) as NSDate
+        let startOfYear = Calendar.current.startOfYear(Date())
+        let endOfYear = Calendar.current.endOfYear(Date())
 
-        let predicate = NSPredicate(format: "date >= %@ and date <= %@", startOfYear, endOfYear)
-
-        let result = dbHelper.fetch(CashflowItemMO.self, predicate: predicate)
-
-        switch result {
-        case .success(let cashflowItems):
-            return cashflowItems
-        case .failure(_):
-            return []
-        }
-
+        return fetchAnInterval(from: startOfYear, to: endOfYear)
     }
 
     func fetchFor(month: Int) -> [CashflowItem] {
-        let startOfMonth = Calendar.current.startOfMonth(Date()) as NSDate
-        let endOfMonth = Calendar.current.endOfMonth(Date()) as NSDate
+        let startOfMonth = Calendar.current.startOfMonth(Date())
+        let endOfMonth = Calendar.current.endOfMonth(Date())
 
-        let predicate = NSPredicate(format: "date >= %@ and date <= %@", startOfMonth, endOfMonth)
+        return fetchAnInterval(from: startOfMonth, to: endOfMonth)
+    }
+
+    private func fetchAnInterval(from since: Date, to until: Date) -> [CashflowItem] {
+        let predicate = NSPredicate(format: "date >= %@ and date <= %@", since as NSDate, until as NSDate)
 
         let result = dbHelper.fetch(CashflowItemMO.self, predicate: predicate)
 

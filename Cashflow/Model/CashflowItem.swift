@@ -7,8 +7,10 @@
 
 import Foundation
 
-enum InvoiceType: String {
+enum InvoiceType: String, Identifiable, CaseIterable {
     case income = "Income", expense = "Expense"
+
+    var id: String { self.rawValue }
 }
 
 protocol CashflowItem {

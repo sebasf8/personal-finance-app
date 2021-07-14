@@ -7,8 +7,14 @@
 
 import Foundation
 
-class CashflowItemViewModel {
-    private let cashflowItem: CashflowItem
+protocol CashflowItemViewModelDelegate: AnyObject {
+    func newItemAdded(_ cashflowItemViewModel: CashflowItemViewModel, cashflowItem: CashflowItem)
+}
+
+class CashflowItemViewModel: ObservableObject {
+    @Published var cashflowItem: CashflowItem
+    weak var delegate: CashflowItemViewModelDelegate?
+    private let repository: CashflowItemRepository
 
     var name: String {
         cashflowItem.name
@@ -28,9 +34,15 @@ class CashflowItemViewModel {
 
     var category: CategoryViewModel
 
-    init(_ cashflowItem: CashflowItem) {
+    init(_ cashflowItem: CashflowItem, repository: CashflowItemRepository) {
         self.cashflowItem = cashflowItem
+        self.repository = repository
         category = CategoryViewModel(cashflowItem.category)
+    }
+
+    func save() {
+        repository.save(cashflowItem)
+        delegate?.newItemAdded(self, cashflowItem: cashflowItem)
     }
 
     private func makeFormattedAmount() -> String {

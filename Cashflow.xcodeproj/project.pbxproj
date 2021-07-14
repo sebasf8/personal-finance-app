@@ -14,6 +14,7 @@
 		0A24F93E2690CE3D00A13C56 /* ColorCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0A24F93C2690CE3D00A13C56 /* ColorCollectionViewCell.xib */; };
 		0A24F9402690D19400A13C56 /* ColorCollecionViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F93F2690D19400A13C56 /* ColorCollecionViewModel.swift */; };
 		0A24F9422690DAF400A13C56 /* UIVIewExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F9412690DAF400A13C56 /* UIVIewExtension.swift */; };
+		0A24F94626920C5B00A13C56 /* NewInvoiceViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A24F94526920C5B00A13C56 /* NewInvoiceViewController.swift */; };
 		0A3A8D04266FA5C40062FDE6 /* CategoryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D03266FA5C40062FDE6 /* CategoryViewModel.swift */; };
 		0A3A8D06266FA7360062FDE6 /* CategoryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D05266FA7360062FDE6 /* CategoryRepository.swift */; };
 		0A3A8D09266FB56D0062FDE6 /* CategoryTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0A3A8D07266FB56D0062FDE6 /* CategoryTableViewCell.swift */; };
@@ -90,6 +91,7 @@
 		0A24F93C2690CE3D00A13C56 /* ColorCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ColorCollectionViewCell.xib; sourceTree = "<group>"; };
 		0A24F93F2690D19400A13C56 /* ColorCollecionViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorCollecionViewModel.swift; sourceTree = "<group>"; };
 		0A24F9412690DAF400A13C56 /* UIVIewExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIVIewExtension.swift; sourceTree = "<group>"; };
+		0A24F94526920C5B00A13C56 /* NewInvoiceViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInvoiceViewController.swift; sourceTree = "<group>"; };
 		0A3A8D03266FA5C40062FDE6 /* CategoryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryViewModel.swift; sourceTree = "<group>"; };
 		0A3A8D05266FA7360062FDE6 /* CategoryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryRepository.swift; sourceTree = "<group>"; };
 		0A3A8D07266FB56D0062FDE6 /* CategoryTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryTableViewCell.swift; sourceTree = "<group>"; };
@@ -234,6 +236,7 @@
 				0A3505EE2680C978000B0639 /* Category */,
 				0AACAB492663A15600E662A0 /* HomeViewController.swift */,
 				0A5DF02F2677D20600F77BA9 /* TabBarViewController.swift */,
+				0A24F94526920C5B00A13C56 /* NewInvoiceViewController.swift */,
 			);
 			path = Controller;
 			sourceTree = "<group>";
@@ -681,6 +684,7 @@
 				0A98CA872669568000E8B5F4 /* CashflowRepository.swift in Sources */,
 				0AE9F330262767B700101865 /* NumberFormatters.swift in Sources */,
 				0A3A8D09266FB56D0062FDE6 /* CategoryTableViewCell.swift in Sources */,
+				0A24F94626920C5B00A13C56 /* NewInvoiceViewController.swift in Sources */,
 				0A60173B2673856200B72B3D /* CashflowItemMO.swift in Sources */,
 				0A5DF0302677D20600F77BA9 /* TabBarViewController.swift in Sources */,
 			);
@@ -794,7 +798,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -850,7 +854,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.1;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
